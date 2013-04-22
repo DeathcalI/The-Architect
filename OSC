@@ -26,7 +26,6 @@ if (true) then
   _this setPos [6963.6206, 1568.7094, 0.15366444];
   _this setPos [getpos _this select 0, getpos _this select 1, +0.1];
   _this setVectorUp [0,0,0.1];
-  _this enableSimulation False;
 };
 
 _vehicle_4 = objNull;
@@ -60,7 +59,6 @@ if (true) then
   _this setPos [6902.9614, 1619.0365, -9.4803762];
   _this setPos [getpos _this select 0, getpos _this select 1, -9.2];
   _this setVectorUp [0,0,0.1];
-  _this enableSimulation False;
 };
 
 _vehicle_29 = objNull;
