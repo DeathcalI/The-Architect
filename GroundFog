@@ -1,0 +1,51 @@
+// Ground Fog Spawner - TEST
+
+if (isServer) then {
+
+_GF0 = createTrigger ["EmptyDetector", [2606.8567, 7637.709, 0]];
+_GF0 setTriggerActivation ["LOGIC", "NOT PRESENT", false];
+_GF0 setTriggerStatements ["this", "null=[GF0,70,1,300,10,20,-1.5,3,0.6,1,1,1,20,20,40,false,0.3,10,0.3,0.5,0.5,0,3.5,17.5] execFSM ""Scripts\Fog.fsm"";", ""];
+GF0 = _GF0;
+
+_GF1 = createTrigger ["EmptyDetector", [2549.8303, 7683.8188]];
+_GF1 setTriggerActivation ["LOGIC", "NOT PRESENT", false];
+_GF1 setTriggerStatements ["this", "null=[GF1,70,1,300,10,20,-1.5,3,0.6,1,1,1,20,20,40,false,0.3,10,0.3,0.5,0.5,0,3.5,17.5] execFSM ""Scripts\Fog.fsm"";", ""];
+GF1 = _GF1;
+
+_GF2 = createTrigger ["EmptyDetector", [2697.8535, 7654.498]];
+_GF2 setTriggerActivation ["LOGIC", "NOT PRESENT", false];
+_GF2 setTriggerStatements ["this", "null=[GF2,70,1,300,10,20,-1.5,3,0.6,1,1,1,20,20,40,false,0.3,10,0.3,0.5,0.5,0,3.5,17.5] execFSM ""Scripts\Fog.fsm"";", ""];
+GF2 = _GF2;
+
+_GF3 = createTrigger ["EmptyDetector", [2636.7363, 7724.0923, 0]];
+_GF3 setTriggerActivation ["LOGIC", "NOT PRESENT", false];
+_GF3 setTriggerStatements ["this", "null=[GF3,70,1,300,10,20,-1.5,3,0.6,1,1,1,20,20,40,false,0.3,10,0.3,0.5,0.5,0,3.5,17.5] execFSM ""Scripts\Fog.fsm"";", ""];
+GF3 = _GF3;
+
+_GF4 = createTrigger ["EmptyDetector", [2486.6104, 7650.0186, 0]];
+_GF4 setTriggerActivation ["LOGIC", "NOT PRESENT", false];
+_GF4 setTriggerStatements ["this", "null=[GF4,70,1,300,10,20,-1.5,3,0.6,1,1,1,20,20,40,false,0.3,10,0.3,0.5,0.5,0,3.5,17.5] execFSM ""Scripts\Fog.fsm"";", ""];
+GF4 = _GF4;
+
+_GF5 = createTrigger ["EmptyDetector", [2456.0415, 7725.606, 0]];
+_GF5 setTriggerActivation ["LOGIC", "NOT PRESENT", false];
+_GF5 setTriggerStatements ["this", "null=[GF5,70,1,300,10,20,-1.5,3,0.6,1,1,1,20,20,40,false,0.3,10,0.3,0.5,0.5,0,3.5,17.5] execFSM ""Scripts\Fog.fsm"";", ""];
+GF5 = _GF5;
+
+_GF6 = createTrigger ["EmptyDetector", [2536.6504, 7759.8145]];
+_GF6 setTriggerActivation ["LOGIC", "NOT PRESENT", false];
+_GF6 setTriggerStatements ["this", "null=[GF6,70,1,300,10,20,-1.5,3,0.6,1,1,1,20,20,40,false,0.3,10,0.3,0.5,0.5,0,3.5,17.5] execFSM ""Scripts\Fog.fsm"";", ""];
+GF6 = _GF6;
+
+_GF7 = createTrigger ["EmptyDetector", [2536.6504, 7759.8145]];
+_GF7 setTriggerActivation ["LOGIC", "NOT PRESENT", false];
+_GF7 setTriggerStatements ["this", "null=[GF7,70,1,300,10,20,-1.5,3,0.6,1,1,1,20,20,40,false,0.3,10,0.3,0.5,0.5,0,3.5,17.5] execFSM ""Scripts\Fog.fsm"";", ""];
+GF7 = _GF7;
+
+_GF8 = createTrigger ["EmptyDetector", [2485.7766, 7836.21, 0]];
+_GF8 setTriggerActivation ["LOGIC", "NOT PRESENT", false];
+_GF8 setTriggerStatements ["this", "null=[GF8,70,1,300,10,20,-1.5,3,0.6,1,1,1,20,20,40,false,0.3,10,0.3,0.5,0.5,0,3.5,17.5] execFSM ""Scripts\Fog.fsm"";", ""];
+GF8 = _GF8;
+
+processInitCommands;
+};
