@@ -1,0 +1,319 @@
+// Disabling auto-refuel & auto-repair in Lingor. Version 1.
+// Script by The Architect.
+// I've commented each item so you can enable or disable each station individually. Gas Stations are proper stations, while gas pumps are the fuel tanks with the camo over them.
+// The hangars are grouped however, so you might need to do some extra work there.
+// It's a very rough script, but it works. If anyone finds a better way, please share.
+// Dated 04/15/13
+
+if (!isServer) exitWith {};
+
+// VIDORA GAS STATION
+
+_vehicle_3 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [2985.0054, 5054.5938, 6.3627348], [], 0, "CAN_COLLIDE"];
+  _vehicle_3 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""Building"",25])";
+  //{_x enableSimulation False} forEach ((getPos _this) nearObjects ["Building",25]);
+  _this setPos [2985.0054, 5054.5938, 6.3627348];
+};
+
+// BENIO GAS STATION
+
+_vehicle_5 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [1250.0022, 5556.4038, 6.3631039], [], 0, "CAN_COLLIDE"];
+  _vehicle_5 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""Building"",25])";
+  _this setPos [1250.0022, 5556.4038, 6.3631039];
+};
+
+// FOB EDDIE NORTH HANGARS
+
+_vehicle_7 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [2864.7832, 7102.688, 0], [], 0, "CAN_COLLIDE"];
+  _vehicle_7 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""House"",100])";
+  _this setPos [2864.7832, 7102.688, 0];
+};
+
+// FOB EDDIE CENTRAL HANGARS
+
+_vehicle_10 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [2922.2217, 6850.3398, 0], [], 0, "CAN_COLLIDE"];
+  _vehicle_10 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""House"",50])";
+  _this setPos [2922.2217, 6850.3398, 0];
+};
+
+// FOB EDDIE GAS PUMP
+
+_vehicle_12 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [3103.0142, 6560.8877, 4.683032], [], 0, "CAN_COLLIDE"];
+  _vehicle_12 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""Building"",25])";
+  _this setPos [3103.0142, 6560.8877, 4.683032];
+};
+
+// RESEARCH LAB 101 GAS PUMP
+
+_vehicle_15 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [4415.8687, 6799.1484, 4.6130753], [], 0, "CAN_COLLIDE"];
+  _vehicle_15 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""Building"",25])";
+  _this setPos [4415.8687, 6799.1484, 4.6130753];
+};
+
+// GAS PUMPT AT 47-75
+
+_vehicle_17 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [4163.146, 7526.6514, 4.4781532], [], 0, "CAN_COLLIDE"];
+  _vehicle_17 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""Building"",25])";
+  _this setPos [4163.146, 7526.6514, 4.4781532];
+};
+
+// TUCOS GAS STATION
+
+_vehicle_19 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [4654.2017, 5542.813, 6.3630676], [], 0, "CAN_COLLIDE"];
+  _vehicle_19 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""Building"",25])";
+  _this setPos [4654.2017, 5542.813, 6.3630676];
+};
+
+// CHECKPOINT OESTE GAS PUMP
+
+_vehicle_21 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [5537.2422, 5042.8354, 4.6265154], [], 0, "CAN_COLLIDE"];
+  _vehicle_21 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""Building"",25])";
+  _this setPos [5537.2422, 5042.8354, 4.6265154];
+};
+
+// MARUKO SOUTHERN GAS STATION
+
+_vehicle_23 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [6590.4995, 5730.5522, 6.3615074], [], 0, "CAN_COLLIDE"];
+  _vehicle_23 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""Building"",25])";
+  _this setPos [6590.4995, 5730.5522, 6.3615074];
+};
+
+// MARUKO NORTHERN GAS STATION
+
+_vehicle_25 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [6760.373, 6194.0195, 6.3612137], [], 0, "CAN_COLLIDE"];
+  _vehicle_25 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""Building"",25])";
+  _this setPos [6760.373, 6194.0195, 6.3612137];
+};
+
+// MAF GAS PUMP
+
+_vehicle_27 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [6658.1753, 6838.7427, 4.4381886], [], 0, "CAN_COLLIDE"];
+  _vehicle_27 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""Building"",25])";
+  _this setPos [6658.1753, 6838.7427, 4.4381886];
+};
+
+// CONOTETA GAS STATION
+
+_vehicle_29 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [8596.126, 7713.0444, 6.3619595], [], 0, "CAN_COLLIDE"];
+  _vehicle_29 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""Building"",25])";
+  _this setPos [8596.126, 7713.0444, 6.3619595];
+};
+
+// VILLA GOMEZ GAS PUMP
+
+_vehicle_31 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [8329.4844, 8298.7314, 4.5914974], [], 0, "CAN_COLLIDE"];
+  _vehicle_31 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""Building"",25])";
+  _this setPos [8329.4844, 8298.7314, 4.5914974];
+};
+
+// MANTERIA GAS PUMP
+
+_vehicle_33 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [6963.4746, 4754.6382, 4.4391327], [], 0, "CAN_COLLIDE"];
+  _vehicle_33 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""Building"",25])";
+  _this setPos [6963.4746, 4754.6382, 4.4391327];
+};
+
+// MANTERIA GAS STATION
+
+_vehicle_35 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [6621.0186, 4617.4844, 0], [], 0, "CAN_COLLIDE"];
+  _vehicle_35 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""Building"",25])";
+  _this setPos [6621.0186, 4617.4844, 0];
+};
+
+// MOTODROME GAS STATION
+
+_vehicle_37 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [1994.1681, 4573.9966, 0], [], 0, "CAN_COLLIDE"];
+  _vehicle_37 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""Building"",25])";
+  _this setPos [1994.1681, 4573.9966, 0];
+};
+
+// LOS PELIGRON GAS PUMP
+
+_vehicle_39 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [2863.665, 3535.3022, 4.5837555], [], 0, "CAN_COLLIDE"];
+  _vehicle_39 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""Building"",25])";
+  _this setPos [2863.665, 3535.3022, 4.5837555];
+};
+
+// PINTOSA GAS PUMP
+
+_vehicle_41 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [1326.8713, 1454.1475, 4.5481958], [], 0, "CAN_COLLIDE"];
+  _vehicle_41 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""Building"",25])";
+  _this setPos [1326.8713, 1454.1475, 4.5481958];
+};
+
+// ZUELA GAS STATION
+
+_vehicle_43 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [581.42456, 1400.8828, 6.3616791], [], 0, "CAN_COLLIDE"];
+  _vehicle_43 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""Building"",25])";
+  _this setPos [581.42456, 1400.8828, 6.3616791];
+};
+
+// RALON GAS PUMP
+
+_vehicle_45 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [3306.27, 1631.4199, 4.6276779], [], 0, "CAN_COLLIDE"];
+  _vehicle_45 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""Building"",25])";
+  _this setPos [3306.27, 1631.4199, 4.6276779];
+};
+
+// CALAMAR GAS PUMP
+
+_vehicle_47 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [3892.573, 1416.0994, 4.7963419], [], 0, "CAN_COLLIDE"];
+  _vehicle_47 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""Building"",25])";
+  _this setPos [3892.573, 1416.0994, 4.7963419];
+};
+
+// AES GAS PUMP
+
+_vehicle_49 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [4122.3882, 1366.752, 4.6698456], [], 0, "CAN_COLLIDE"];
+  _vehicle_49 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""Building"",25])";
+  _this setPos [4122.3882, 1366.752, 4.6698456];
+};
+
+// AES SOUTHERN HANGARS
+
+_vehicle_51 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [4469.166, 1568.6191, 7.7894897], [], 0, "CAN_COLLIDE"];
+  _vehicle_51 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""House"",100])";
+  _this setPos [4469.166, 1568.6191, 7.7894897];
+};
+
+// AES NORTHERN HANGARS
+
+_vehicle_54 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [4437.8774, 1770.528], [], 0, "CAN_COLLIDE"];
+  _vehicle_54 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""House"",150])";
+  _this setPos [4437.8774, 1770.528];
+};
+
+// CALAMAR GAS STATION
+
+_vehicle_57 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [4156.4995, 2019.6509, 6.3614273], [], 0, "CAN_COLLIDE"];
+  _vehicle_57 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""Building"",25])";
+  _this setPos [4156.4995, 2019.6509, 6.3614273];
+};
+
+// EL VILLON GAS PUMP
+
+_vehicle_59 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [7409.3125, 1809.2035, 5.312057], [], 0, "CAN_COLLIDE"];
+  _vehicle_59 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""Building"",25])";
+  _this setPos [7409.3125, 1809.2035, 5.312057];
+};
+
+// PALIDA GAS STATION
+
+_vehicle_61 = objNull;
+if (true) then
+{
+  _this = createVehicle ["ClutterCutter_small_2_EP1", [8369.6133, 2606.8647, -4.7683716e-007], [], 0, "CAN_COLLIDE"];
+  _vehicle_61 = _this;
+  _this setVehicleInit "{_x enableSimulation False} forEach ((getPos this) nearObjects [""Building"",25])";
+  _this setPos [8369.6133, 2606.8647, -4.7683716e-007];
+};
+
+processInitCommands;
