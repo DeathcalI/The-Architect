@@ -1,0 +1,53 @@
+// Disabling auto-refuel & auto-repair in Lingor. Version 5.
+// Script by The Architect.
+// I've commented each item so you can enable or disable each station individually. Gas Stations are proper stations, while gas pumps are the fuel tank sheds.
+// The hangars are grouped , so you might need to do some extra work there.
+// This script should be less of a performance hit than the previous versions.
+// Dated 04/26/13
+
+if (isServer) then {
+          
+    _gs1 = ([2985, 5054] nearObjects ["Land_ibr_FuelStation_Feed",25]);         // VIDORA GAS STATION
+    _gs2 = ([1250, 5556] nearObjects ["Land_ibr_FuelStation_Feed",25]);         // BENIO GAS STATION
+    _gs3 = ([4654, 5542] nearObjects ["Land_ibr_FuelStation_Feed",25]);         // TUCOS GAS STATION
+    _gs4 = ([6590, 5730] nearObjects ["Land_ibr_FuelStation_Feed",25]);         // MARUKO SOUTHERN GAS STATION
+    _gs5 = ([6760, 6194] nearObjects ["Land_ibr_FuelStation_Feed",25]);         // MARUKO NORTHERN GAS STATION
+    _gs6 = ([8596, 7713] nearObjects ["Land_ibr_FuelStation_Feed",25]);         // CONOTETA GAS STATION
+    _gs7 = ([6621, 4617] nearObjects ["Land_ibr_FuelStation_Feed",25]);         // MANTERIA GAS STATION
+    _gs8 = ([1994, 4573] nearObjects ["Land_ibr_FuelStation_Feed",25]);         // MOTODROME GAS STATION
+    _gs9 = ([581, 1400] nearObjects ["Land_ibr_FuelStation_Feed",25]);          // ZUELA GAS STATION
+    _gs10 = ([4156, 2019] nearObjects ["Land_ibr_FuelStation_Feed",25]);        // CALAMAR GAS STATION
+    _gs11 = ([8369, 2606] nearObjects ["Land_ibr_FuelStation_Feed",25]);        // PALIDA GAS STATION
+           
+    _gp1 = ([3103, 6560] nearObjects ["Land_fuelstation_army",25]);             // FOB EDDIE GAS PUMP
+    _gp2 = ([4415, 6799] nearObjects ["Land_fuelstation",25]);                  // RESEARCH LAB 101 GAS PUMP
+    _gp3 = ([4163, 7526] nearObjects ["Land_fuelstation",25]);                  // GAS PUMP AT 41-75
+    _gp4 = ([5537, 5042] nearObjects ["Land_fuelstation_army",25]);             // CHECKPOINT OESTE GAS PUMP
+    _gp5 = ([6658, 6838] nearObjects ["Land_fuelstation_army",25]);             // MAF GAS PUMP
+    _gp6 = ([8329, 8298] nearObjects ["Land_fuelstation_army",25]);             // VILLA GOMEZ GAS PUMP
+    _gp7 = ([6963, 4754] nearObjects ["Land_fuelstation",25]);                  // MANTERIA GAS PUMP
+    _gp8 = ([2863, 3535] nearObjects ["Land_fuelstation_army",25]);             // LOS PELIGRON GAS PUMP
+    _gp9 = ([1326, 1454] nearObjects ["Land_fuelstation",25]);                  // PINTOSA GAS PUMP
+    _gp10 = ([3306, 1631] nearObjects ["Land_fuelstation_army",25]);            // RALON GAS PUMP
+    _gp11 = ([3892, 1416] nearObjects ["Land_fuelstation_army",25]);            // CALAMAR GAS PUMP
+    _gp12 = ([4122, 1366] nearObjects ["Land_fuelstation_army",25]);            // AES GAS PUMP
+    _gp13 = ([7409, 1809] nearObjects ["Land_fuelstation_army",25]);            // EL VILLON GAS PUMP
+           
+    _ha1 = ([2864, 7102] nearObjects ["land_ibr_hangar",100]);                  // FOB EDDIE NORTH HANGARS
+    _ha2 = ([2922, 6850] nearObjects ["land_ibr_hangar",50]);                   // FOB EDDIE CENTRAL HANGARS
+    _ha3 = ([4469, 1568] nearObjects ["land_ibr_hangar",100]);                  // AES SOUTHERN HANGARS
+    _ha4 = ([4437, 1770] nearObjects ["land_ibr_hangar",150]);                  // AES NORTHERN HANGARS
+
+        _GasStations = _gs1 + _gs2 + _gs3 + _gs4 + _gs5 + _gs6 + _gs7 +
+                       _gs8 + _gs9 + _gs10 + _gs11;
+
+        _GasPumps = _gp1 + _gp2 + _gp3 + _gp4 + _gp5 + _gp6 + _gp7 +
+                    _gp8 + _gp9 + _gp10 + _gp11 + _gp12 + _gp13;
+
+        _Hangars = _ha1 + _ha2 + _ha3 + _ha4;
+
+        _AllFuel = _GasStations + _GasPumps + _Hangars;
+
+        {_x enableSimulation False} foreach _AllFuel;
+          
+};
