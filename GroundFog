@@ -1,7 +1,5 @@
 // Ground Fog Spawner - TEST
 
-if (isServer) then {
-
 _GF0 = createTrigger ["EmptyDetector", [2606.8567, 7637.709, 0]];
 _GF0 setTriggerActivation ["LOGIC", "NOT PRESENT", false];
 _GF0 setTriggerStatements ["this", "null=[GF0,70,1,300,10,20,-1.5,3,0.6,1,1,1,20,20,40,false,0.3,10,0.3,0.5,0.5,0,3.5,17.5] execFSM ""Scripts\Fog.fsm"";", ""];
@@ -46,6 +44,3 @@ _GF8 = createTrigger ["EmptyDetector", [2485.7766, 7836.21, 0]];
 _GF8 setTriggerActivation ["LOGIC", "NOT PRESENT", false];
 _GF8 setTriggerStatements ["this", "null=[GF8,70,1,300,10,20,-1.5,3,0.6,1,1,1,20,20,40,false,0.3,10,0.3,0.5,0.5,0,3.5,17.5] execFSM ""Scripts\Fog.fsm"";", ""];
 GF8 = _GF8;
-
-processInitCommands;
-};
