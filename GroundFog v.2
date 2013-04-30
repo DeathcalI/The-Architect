@@ -1,0 +1,38 @@
+// Ground Fog Spawner V2
+// Works with Rockhaunt's Fog FSM Script.
+// This current spawner will create an area of fog around COORDS 26-76 and surrounding grids on LINGOR.
+// Make sure the path on the execVM for the Fog.fsm file is correct.
+// This script is run client-side, so it can't be wrapped in if isServer brackets.
+// Might be a huge performance hit for people that can't render clouds well.
+// Spawner by Architect.
+// Dated 04/26/13
+
+_GF0 = createMarker ["GF0", [2606.8567, 7637.709, 0]];
+_GF1 = createMarker ["GF1", [2549.8303, 7683.8188]];
+_GF2 = createMarker ["GF2", [2697.8535, 7654.498]];
+_GF3 = createMarker ["GF3", [2636.7363, 7724.0923, 0]];
+_GF4 = createMarker ["GF4", [2486.6104, 7650.0186, 0]];
+_GF5 = createMarker ["GF5", [2456.0415, 7725.606, 0]];
+_GF6 = createMarker ["GF6", [2536.6504, 7759.8145]];
+_GF7 = createMarker ["GF7", [2536.6504, 7759.8145]];
+_GF8 = createMarker ["GF8", [2485.7766, 7836.21, 0]];
+
+GF0 = _GF0;
+GF1 = _GF1;
+GF2 = _GF2;
+GF3 = _GF3;
+GF4 = _GF4;
+GF5 = _GF5;
+GF6 = _GF6;
+GF7 = _GF7;
+GF8 = _GF8;
+
+[GF0,70,1,300,10,20,-1.5,3,0.6,1,1,1,20,20,40,false,0.3,10,0.3,0.5,0.5,0,3.5,17.5] execFSM "Fog.fsm";
+[GF1,70,1,300,10,20,-1.5,3,0.6,1,1,1,20,20,40,false,0.3,10,0.3,0.5,0.5,0,3.5,17.5] execFSM "Fog.fsm";
+[GF2,70,1,300,10,20,-1.5,3,0.6,1,1,1,20,20,40,false,0.3,10,0.3,0.5,0.5,0,3.5,17.5] execFSM "Fog.fsm";
+[GF3,70,1,300,10,20,-1.5,3,0.6,1,1,1,20,20,40,false,0.3,10,0.3,0.5,0.5,0,3.5,17.5] execFSM "Fog.fsm";
+[GF4,70,1,300,10,20,-1.5,3,0.6,1,1,1,20,20,40,false,0.3,10,0.3,0.5,0.5,0,3.5,17.5] execFSM "Fog.fsm";
+[GF5,70,1,300,10,20,-1.5,3,0.6,1,1,1,20,20,40,false,0.3,10,0.3,0.5,0.5,0,3.5,17.5] execFSM "Fog.fsm";
+[GF6,70,1,300,10,20,-1.5,3,0.6,1,1,1,20,20,40,false,0.3,10,0.3,0.5,0.5,0,3.5,17.5] execFSM "Fog.fsm";
+[GF7,70,1,300,10,20,-1.5,3,0.6,1,1,1,20,20,40,false,0.3,10,0.3,0.5,0.5,0,3.5,17.5] execFSM "Fog.fsm";
+[GF8,70,1,300,10,20,-1.5,3,0.6,1,1,1,20,20,40,false,0.3,10,0.3,0.5,0.5,0,3.5,17.5] execFSM "Fog.fsm";
