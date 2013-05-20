@@ -4,9 +4,7 @@
 // The hangars are grouped , so you might need to do some extra work there.
 // This script should be less of a performance hit than the previous versions.
 // Dated 04/26/13
-
-if (isServer) then {
-          
+ 
     _gs1 = ([2985, 5054] nearObjects ["Land_ibr_FuelStation_Feed",25]);         // VIDORA GAS STATION
     _gs2 = ([1250, 5556] nearObjects ["Land_ibr_FuelStation_Feed",25]);         // BENIO GAS STATION
     _gs3 = ([4654, 5542] nearObjects ["Land_ibr_FuelStation_Feed",25]);         // TUCOS GAS STATION
@@ -49,5 +47,3 @@ if (isServer) then {
         _AllFuel = _GasStations + _GasPumps + _Hangars;
 
         {_x enableSimulation False} foreach _AllFuel;
-          
-};
