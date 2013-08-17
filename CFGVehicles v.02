@@ -1,0 +1,1268 @@
+// Architect Version 0.2
+// Dated 17/08/13
+// Main purpose of this version is to point out which vehicles should be unbanned.
+
+class CfgVehicles {
+	class All;
+	class Banned: All
+	{
+		stopThis = true;
+	};
+        
+//      SKINS ------------------------------------------------------------------
+//      VISUAL AID:
+//      ARMA2     - http://community.bistudio.com/wiki/ArmA_2:_Infantry
+//      ARMA2 OA  - http://community.bistudio.com/wiki/ArmA_2_OA:_Infantry
+
+//      OVERALL COMMENTS
+//
+//      While I don't see a particular reason to ban any skin, I do understand
+//      that some of these might not have all slot available to them, be it main
+//      gear, secondary or backpacks.
+//      I'm not sure how this can be fixed, or even if it can at all. I any case
+//      I'll comment on those which I find to be interesting.
+        
+//      MILITARY ---------------------------------------------------------------
+
+//      Main problem with these skins is that they look too military... because
+//      well, they are military skins. I'll unban and comment (providing links)
+//      the ones I think could work for the mod.
+
+        class USMC_Soldier: Banned {};
+	class USMC_Soldier_Light: Banned {};
+	class USMC_Soldier2: Banned {};
+	class USMC_Soldier_GL: Banned {};
+	class USMC_Soldier_Officer: Banned {};
+	class USMC_Soldier_SL: Banned {};
+	class USMC_Soldier_TL: Banned {};
+	class USMC_Soldier_LAT: Banned {};
+	class USMC_Soldier_AT: Banned {};
+	class USMC_Soldier_HAT: Banned {};
+	class USMC_Soldier_AA: Banned {};
+	class USMC_Soldier_Medic: Banned {};
+	class USMC_Soldier_AR: Banned {};
+	class USMC_Soldier_MG: Banned {};
+	class USMC_SoldierS_Spotter: Banned {};
+	class USMC_SoldierS_Sniper: Banned {};
+	class USMC_SoldierS_SniperH: Banned {};
+	class USMC_SoldierM_Marksman: Banned {};
+	class USMC_SoldierS: Banned {};
+	class USMC_SoldierS_Engineer: Banned {};
+	class USMC_Soldier_Pilot: Banned {};
+	class USMC_Soldier_Crew: Banned {};
+        
+	class USMC_LHD_Crew_White: Banned {};
+	class USMC_LHD_Crew_Blue: Banned {};
+	class USMC_LHD_Crew_Brown: Banned {};
+	class USMC_LHD_Crew_Green: Banned {};
+	class USMC_LHD_Crew_Red: Banned {};
+	class USMC_LHD_Crew_Purple: Banned {};
+	class USMC_LHD_Crew_Yellow: Banned {};
+        
+        //class US_Soldier_EP1: Banned {};
+	class US_Soldier_B_EP1: Banned {};
+	class US_Soldier_AMG_EP1: Banned {};
+	class US_Soldier_AAR_EP1: Banned {};
+	class US_Soldier_AHAT_EP1: Banned {};
+	class US_Soldier_AAT_EP1: Banned {};
+	class US_Soldier_Light_EP1: Banned {};
+	class US_Soldier_GL_EP1: Banned {};
+	class US_Soldier_Officer_EP1: Banned {};
+	class US_Soldier_SL_EP1: Banned {};
+	class US_Soldier_TL_EP1: Banned {};
+	class US_Soldier_LAT_EP1: Banned {};
+	class US_Soldier_AT_EP1: Banned {};
+	class US_Soldier_HAT_EP1: Banned {};
+	class US_Soldier_AA_EP1: Banned {};
+	class US_Soldier_Medic_EP1: Banned {};
+	class US_Soldier_AR_EP1: Banned {};
+	class US_Soldier_MG_EP1: Banned {};
+	class US_Soldier_Spotter_EP1: Banned {};
+	class US_Soldier_Sniper_EP1: Banned {};
+	class US_Soldier_Sniper_NV_EP1: Banned {};
+	class US_Soldier_SniperH_EP1: Banned {};
+	class US_Soldier_Marksman_EP1: Banned {};
+	class US_Soldier_Engineer_EP1: Banned {};
+	class US_Soldier_Pilot_EP1: Banned {};
+	class US_Soldier_Crew_EP1: Banned {};
+        
+	class US_Delta_Force_EP1: Banned {};
+	class US_Delta_Force_TL_EP1: Banned {};
+	class US_Delta_Force_Medic_EP1: Banned {};
+	class US_Delta_Force_Assault_EP1: Banned {};
+	class US_Delta_Force_SD_EP1: Banned {};
+	class US_Delta_Force_MG_EP1: Banned {};
+	class US_Delta_Force_AR_EP1: Banned {};
+	class US_Delta_Force_Night_EP1: Banned {};
+	class US_Delta_Force_Marksman_EP1: Banned {};
+	class US_Delta_Force_M14_EP1: Banned {};
+	class US_Delta_Force_Air_Controller_EP1: Banned {};
+        class US_Pilot_Light_EP1: Banned {};
+        
+        class US_Delta_Force_Undercover_Takistani02_EP1: Banned {};
+	class US_Delta_Force_Undercover_Takistani04_EP1: Banned {};
+	class US_Delta_Force_Undercover_Takistani05_EP1: Banned {};
+	class US_Delta_Force_Undercover_Takistani06_EP1: Banned {};
+        
+	class FR_TL: Banned {};
+	class FR_Commander: Banned {};
+	class FR_R: Banned {};
+	class FR_Marksman: Banned {};
+	class FR_Light: Banned {};
+	class FR_Corpsman: Banned {};
+	//class FR_AR: Banned {};                                               http://community.bistudio.com/wiki/File:Arma2_FR_machinegunner.jpg
+	class FR_GL: Banned {};
+	class FR_Sapper: Banned {};
+	class FR_AC: Banned {};
+	class FR_Miles: Banned {};
+	class FR_Cooper: Banned {};
+	class FR_Sykes: Banned {};
+	//class FR_OHara: Banned {};                                            http://community.bistudio.com/wiki/File:Arma2_FR_ohara.jpg
+	class FR_Rodriguez: Banned {};
+	class FR_Assault_R: Banned {};
+	class FR_Assault_GL: Banned {};
+        
+	class RU_Soldier_Base: Banned {};
+	class RU_Soldier: Banned {};
+	class RU_Soldier2: Banned {};
+	class RU_Soldier_GL: Banned {};
+	class RU_Soldier_Light: Banned {};
+	class RU_Soldier_Officer: Banned {};
+	class RU_Soldier_SL: Banned {};
+	class RU_Soldier_TL: Banned {};
+	class RU_Commander: Banned {};
+	class RU_Soldier_MG: Banned {};
+	class RU_Soldier_AR: Banned {};
+	class RU_Soldier_LAT: Banned {};
+	class RU_Soldier_AT: Banned {};
+	class RU_Soldier_HAT: Banned {};
+	class RU_Soldier_AA: Banned {};
+	class RU_Soldier_Sniper: Banned {};
+	class RU_Soldier_SniperH: Banned {};
+	class RU_Soldier_Spotter: Banned {};
+	class RU_Soldier_Marksman: Banned {};
+	class RU_Soldier_Medic: Banned {};
+	class RU_Soldier_Pilot: Banned {};
+	class RU_Soldier_Crew: Banned {};
+        
+	class RUS_Soldier_Base: Banned {};
+	class RUS_Soldier1: Banned {};
+	class RUS_Soldier2: Banned {};
+	//class RUS_Soldier3: Banned {};                                        Spetnatz Scout - http://community.bistudio.com/wiki/File:Arma2_RUS_recon.jpg
+	class RUS_Soldier_GL: Banned {};
+	class RUS_Soldier_TL: Banned {};
+	class RUS_Commander: Banned {};
+	class RUS_Soldier_Marksman: Banned {};
+	class RUS_Soldier_Sab: Banned {};
+        
+	class MVD_Soldier_Base: Banned {};
+	class MVD_Soldier: Banned {};
+	class MVD_Soldier_GL: Banned {};
+	class MVD_Soldier_TL: Banned {};
+	class MVD_Soldier_AT: Banned {};
+	class MVD_Soldier_MG: Banned {};
+	class MVD_Soldier_Marksman: Banned {};
+	class MVD_Soldier_Sniper: Banned {};
+        
+	//class GUE_Soldier_Base: Banned {};
+	//class GUE_Soldier_1: Banned {};                                       http://community.bistudio.com/wiki/File:Arm2_GUE_ak74su.jpg
+	//class GUE_Soldier_2: Banned {};                                       http://community.bistudio.com/wiki/File:Arm2_GUE_akm.jpg
+	//class GUE_Soldier_3: Banned {};                                       http://community.bistudio.com/wiki/File:Arm2_GUE_soldier.jpg
+	class GUE_Soldier_GL: Banned {};
+	class GUE_Worker2: Banned {};
+	class GUE_Woodlander1: Banned {};
+	class GUE_Woodlander2: Banned {};
+	class GUE_Woodlander3: Banned {};
+	class GUE_Villager3: Banned {};
+	class GUE_Villager4: Banned {};
+	class GUE_Soldier_CO: Banned {};
+	//class GUE_Commander: Banned {};                                       http://community.bistudio.com/wiki/File:Arm2_GUE_warlord.jpg
+	class GUE_Soldier_AT: Banned {};
+	class GUE_Soldier_AA: Banned {};
+	class GUE_Soldier_AR: Banned {};
+	class GUE_Soldier_MG: Banned {};
+	class GUE_Soldier_Sniper: Banned {};
+	class GUE_Soldier_Sab: Banned {};
+	class GUE_Soldier_Scout: Banned {};
+	class GUE_Soldier_Medic: Banned {};
+	class GUE_Soldier_Pilot: Banned {};
+	class GUE_Soldier_Crew: Banned {};
+        
+	class Ins_Soldier_Base: Banned {};
+	//class Ins_Soldier_1: Banned {};
+	class Ins_Soldier_2: Banned {};
+	//class Ins_Soldier_GL: Banned {};                                      Grenadier - http://community.bistudio.com/wiki/File:Arma2_INS_grenadier.jpg
+	class Ins_Soldier_CO: Banned {};
+	class Ins_Commander: Banned {};
+	class Ins_Soldier_Medic: Banned {};
+	class Ins_Soldier_AR: Banned {};
+	class Ins_Soldier_MG: Banned {};
+	class Ins_Soldier_AT: Banned {};
+	class Ins_Soldier_AA: Banned {};
+	class Ins_Soldier_Sniper: Banned {};
+	class Ins_Soldier_Sapper: Banned {};
+	class Ins_Soldier_Sab: Banned {};
+	class Ins_Worker2: Banned {};
+	class Ins_Woodlander1: Banned {};
+	class Ins_Woodlander2: Banned {};
+	class Ins_Woodlander3: Banned {};
+	class Ins_Villager3: Banned {};
+	class Ins_Villager4: Banned {};
+	//class Ins_Lopotev: Banned {};                                         Lopotev - http://community.bistudio.com/wiki/File:Arma2_INS_boss.jpg
+	class Ins_Bardak: Banned {};
+	class Ins_Soldier_Pilot: Banned {};
+	class Ins_Soldier_Crew: Banned {};
+        
+	class CDF_Soldier_Base: Banned {};
+	//class CDF_Soldier: Banned {};
+	class CDF_Soldier_Light: Banned {};
+	class CDF_Soldier_GL: Banned {};
+	//class CDF_Soldier_Militia: Banned {};
+	class CDF_Soldier_Medic: Banned {};
+	class CDF_Soldier_Sniper: Banned {};
+	class CDF_Soldier_Spotter: Banned {};
+	class CDF_Soldier_Marksman: Banned {};
+	class CDF_Soldier_RPG: Banned {};
+	class CDF_Soldier_Strela: Banned {};
+	//class CDF_Soldier_AR: Banned {};
+	class CDF_Soldier_MG: Banned {};
+	class CDF_Soldier_TL: Banned {};
+	class CDF_Soldier_Officer: Banned {};
+	class CDF_Commander: Banned {};
+	class CDF_Soldier_Pilot: Banned {};
+	class CDF_Soldier_Crew: Banned {};
+	class CDF_Soldier_Engineer: Banned {};
+        
+        //class TK_INS_Soldier_EP1: Banned {};
+	class TK_INS_Soldier_AAT_EP1: Banned {};
+	class TK_INS_Soldier_2_EP1: Banned {};
+	class TK_INS_Soldier_3_EP1: Banned {};
+	class TK_INS_Soldier_4_EP1: Banned {};
+	class TK_INS_Soldier_AA_EP1: Banned {};
+	class TK_INS_Soldier_AT_EP1: Banned {};
+	class TK_INS_Soldier_TL_EP1: Banned {};
+	class TK_INS_Soldier_Sniper_EP1: Banned {};
+	class TK_INS_Soldier_AR_EP1: Banned {};
+	class TK_INS_Soldier_MG_EP1: Banned {};
+	class TK_INS_Bonesetter_EP1: Banned {};
+	class TK_INS_Warlord_EP1: Banned {};
+	class TK_GUE_Soldier_EP1: Banned {};
+	class TK_GUE_Soldier_AAT_EP1: Banned {};
+	class TK_GUE_Soldier_2_EP1: Banned {};
+	class TK_GUE_Soldier_3_EP1: Banned {};
+	class TK_GUE_Soldier_4_EP1: Banned {};
+	class TK_GUE_Soldier_5_EP1: Banned {};
+	class TK_GUE_Soldier_AA_EP1: Banned {};
+	class TK_GUE_Soldier_AT_EP1: Banned {};
+	class TK_GUE_Soldier_HAT_EP1: Banned {};
+	class TK_GUE_Soldier_TL_EP1: Banned {};
+	class TK_GUE_Soldier_Sniper_EP1: Banned {};
+	class TK_GUE_Soldier_AR_EP1: Banned {};
+	class TK_GUE_Soldier_MG_EP1: Banned {};
+	class TK_GUE_Bonesetter_EP1: Banned {};
+	class TK_GUE_Warlord_EP1: Banned {};
+        
+	class CZ_Soldier_SL_DES_EP1: Banned {};
+	//class CZ_Soldier_DES_EP1: Banned {};
+	class CZ_Soldier_B_DES_EP1: Banned {};
+	class CZ_Soldier_medik_DES_EP1: Banned {};
+	class CZ_Soldier_AMG_DES_EP1: Banned {};
+	class CZ_Soldier_AT_DES_EP1: Banned {};
+	class CZ_Soldier_MG_DES_EP1: Banned {};
+	class CZ_Soldier_Office_DES_EP1: Banned {};
+	class CZ_Soldier_Light_DES_EP1: Banned {};
+	class CZ_Soldier_Pilot_EP1: Banned {};
+	class CZ_Soldier_Sniper_EP1: Banned {};
+	class CZ_Special_Forces_Scout_DES_EP1: Banned {};
+	class CZ_Special_Forces_MG_DES_EP1: Banned {};
+	class CZ_Special_Forces_DES_EP1: Banned {};
+	class CZ_Special_Forces_TL_DES_EP1: Banned {};
+	class CZ_Special_Forces_GL_DES_EP1: Banned {};
+	
+        class UN_CDF_Soldier_base_EP1: Banned {};
+	class UN_CDF_Soldier_EP1: Banned {};
+	class UN_CDF_Soldier_B_EP1: Banned {};
+	class UN_CDF_Soldier_AAT_EP1: Banned {};
+	class UN_CDF_Soldier_AMG_EP1: Banned {};
+	class UN_CDF_Soldier_AT_EP1: Banned {};
+	class UN_CDF_Soldier_MG_EP1: Banned {};
+	class UN_CDF_Soldier_SL_EP1: Banned {};
+	class UN_CDF_Soldier_Officer_EP1: Banned {};
+	class UN_CDF_Soldier_Guard_EP1: Banned {};
+	class UN_CDF_Soldier_Pilot_EP1: Banned {};
+	class UN_CDF_Soldier_Crew_EP1: Banned {};
+	class UN_CDF_Soldier_Light_EP1: Banned {};
+	
+        class TK_Soldier_EP1: Banned {};
+	class TK_Soldier_GL_EP1: Banned {};
+	class TK_Soldier_B_EP1: Banned {};
+	class TK_Soldier_AAT_EP1: Banned {};
+	class TK_Soldier_AMG_EP1: Banned {};
+	class TK_Soldier_LAT_EP1: Banned {};
+	class TK_Soldier_AT_EP1: Banned {};
+	class TK_Soldier_HAT_EP1: Banned {};
+	class TK_Soldier_AA_EP1: Banned {};
+	class TK_Soldier_Engineer_EP1: Banned {};
+	class TK_Soldier_MG_EP1: Banned {};
+	class TK_Soldier_AR_EP1: Banned {};
+	class TK_Soldier_Medic_EP1: Banned {};
+	class TK_Soldier_SL_EP1: Banned {};
+	//class TK_Soldier_Officer_EP1: Banned {};                              http://community.bistudio.com/wiki/File:Arma2_TK_officer.jpg
+	class TK_Soldier_Spotter_EP1: Banned {};
+	class TK_Soldier_Sniper_EP1: Banned {};
+	class TK_Soldier_SniperH_EP1: Banned {};
+	class TK_Soldier_Sniper_Night_EP1: Banned {};
+	class TK_Soldier_Night_1_EP1: Banned {};
+	class TK_Soldier_Night_2_EP1: Banned {};
+	class TK_Soldier_TWS_EP1: Banned {};
+	class TK_Soldier_Crew_EP1: Banned {};
+	class TK_Soldier_Pilot_EP1: Banned {};
+	//class TK_Special_Forces_EP1: Banned {};                               http://community.bistudio.com/wiki/File:Arma2_TK_SF_soldier.jpg
+	class TK_Special_Forces_MG_EP1: Banned {};
+	//class TK_Aziz_EP1: Banned {};                                         RP Purposes - http://community.bistudio.com/wiki/File:Arma2_TK_aziz.jpg
+	class TK_Commander_EP1: Banned {};
+        
+        //class BAF_Soldier_MTP: Banned {};
+	//class BAF_Soldier_DDPM: Banned {};
+	class BAF_Soldier_GL_MTP: Banned {};
+	class BAF_Soldier_GL_DDPM: Banned {};
+	class BAF_Soldier_N_MTP: Banned {};
+	class BAF_Soldier_N_DDPM: Banned {};
+	//class BAF_Soldier_L_MTP: Banned {};
+	//class BAF_Soldier_L_DDPM: Banned {};
+	class BAF_ASoldier_MTP: Banned {};
+	class BAF_ASoldier_DDPM: Banned {};
+	class BAF_Soldier_AAR_MTP: Banned {};
+	class BAF_Soldier_AAR_DDPM: Banned {};
+	class BAF_Soldier_AMG_MTP: Banned {};
+	class BAF_Soldier_AMG_DDPM: Banned {};
+	class BAF_Soldier_AAT_MTP: Banned {};
+	class BAF_Soldier_AAT_DDPM: Banned {};
+	class BAF_Soldier_AHAT_MTP: Banned {};
+	class BAF_Soldier_AHAT_DDPM: Banned {};
+	class BAF_Soldier_AAA_MTP: Banned {};
+	class BAF_Soldier_AAA_DDPM: Banned {};
+	//class BAF_Soldier_Officer_MTP: Banned {};
+	//class BAF_Soldier_Officer_DDPM: Banned {};
+	class BAF_Soldier_SL_MTP: Banned {};
+	class BAF_Soldier_SL_DDPM: Banned {};
+	class BAF_Soldier_TL_MTP: Banned {};
+	class BAF_Soldier_TL_DDPM: Banned {};
+	class BAF_Soldier_AR_MTP: Banned {};
+	class BAF_Soldier_AR_DDPM: Banned {};
+	class BAF_Soldier_MG_MTP: Banned {};
+	class BAF_Soldier_MG_DDPM: Banned {};
+	class BAF_Soldier_AT_MTP: Banned {};
+	class BAF_Soldier_AT_DDPM: Banned {};
+	class BAF_Soldier_HAT_MTP: Banned {};
+	class BAF_Soldier_HAT_DDPM: Banned {};
+	class BAF_Soldier_AA_MTP: Banned {};
+	class BAF_Soldier_AA_DDPM: Banned {};
+	class BAF_Soldier_Marksman_MTP: Banned {};
+	class BAF_Soldier_Marksman_DDPM: Banned {};
+	class BAF_Soldier_scout_MTP: Banned {};
+	class BAF_Soldier_scout_DDPM: Banned {};
+	//class BAF_Soldier_Sniper_MTP: Banned {};
+	//class BAF_Soldier_SniperH_MTP: Banned {};
+	//class BAF_Soldier_SniperN_MTP: Banned {};
+	class BAF_Soldier_spotter_MTP: Banned {};
+	class BAF_Soldier_spotterN_MTP: Banned {};
+	class BAF_Pilot_MTP: Banned {};
+	class BAF_Pilot_DDPM: Banned {};
+	class BAF_crewman_MTP: Banned {};
+	class BAF_crewman_DDPM: Banned {};
+	class BAF_Soldier_Medic_MTP: Banned {};
+	class BAF_Soldier_Medic_DDPM: Banned {};
+	class BAF_Soldier_FAC_MTP: Banned {};
+	class BAF_Soldier_FAC_DDPM: Banned {};
+	class BAF_Soldier_EN_MTP: Banned {};
+	class BAF_Soldier_EN_DDPM: Banned {};
+        class BAF_Soldier_GL_W: Banned {};
+	class BAF_Soldier_N_W: Banned {};
+	class BAF_ASoldier_W: Banned {};
+	class BAF_Soldier_AAR_W: Banned {};
+	class BAF_Soldier_AMG_W: Banned {};
+	class BAF_Soldier_AAT_W: Banned {};
+	class BAF_Soldier_AHAT_W: Banned {};
+	class BAF_Soldier_AAA_W: Banned {};
+	class BAF_Soldier_SL_W: Banned {};
+	class BAF_Soldier_TL_W: Banned {};
+	class BAF_Soldier_AR_W: Banned {};
+	class BAF_Soldier_MG_W: Banned {};
+	class BAF_Soldier_AT_W: Banned {};
+	class BAF_Soldier_HAT_W: Banned {};
+	class BAF_Soldier_AA_W: Banned {};
+	class BAF_Soldier_Marksman_W: Banned {};
+	class BAF_Soldier_scout_W: Banned {};
+	class BAF_Soldier_Sniper_W: Banned {};
+	class BAF_Soldier_SniperN_W: Banned {};
+	class BAF_Soldier_spotter_W: Banned {};
+	class BAF_Soldier_spotterN_W: Banned {};
+	class BAF_Pilot_W: Banned {};
+	class BAF_creWman_W: Banned {};
+	class BAF_Soldier_Medic_W: Banned {};
+	class BAF_Soldier_FAC_W: Banned {};
+	class BAF_Soldier_EN_W: Banned {};
+	
+        class Soldier_PMC: Banned {};
+	//class Soldier_M4A3_PMC: Banned {};                                    http://community.bistudio.com/wiki/File:Arma2_PMC_SC_m4.jpg
+	class Soldier_Engineer_PMC: Banned {};
+	//class Soldier_Crew_PMC: Banned {}; //Bandit Skin (Head)
+	class Soldier_Medic_PMC: Banned {};
+	//class Soldier_TL_PMC: Banned {};                                      http://community.bistudio.com/wiki/File:Arma2_PMC_tc.jpg
+	class Soldier_Pilot_PMC: Banned {};
+	class Soldier_MG_PMC: Banned {};
+	class Soldier_MG_PKM_PMC: Banned {};
+	class Soldier_Sniper_PMC: Banned {};
+	class Soldier_Sniper_KSVK_PMC: Banned {};
+	class Soldier_GL_PMC: Banned {};
+	class Soldier_GL_M16A2_PMC: Banned {};
+	class Soldier_Bodyguard_M4_PMC: Banned {};
+	//class Soldier_Bodyguard_AA12_PMC: Banned {};                          http://community.bistudio.com/wiki/File:Arma2_PMC_bodyguardAA12.jpg
+	class Soldier_AA_PMC: Banned {};
+	class Soldier_AT_PMC: Banned {};
+        
+        //class GER_Soldier_EP1: Banned {};                                     http://community.bistudio.com/wiki/File:Arma2_GER_KSK_soldier.jpg
+	//class GER_Soldier_Medic_EP1: Banned {};                               http://community.bistudio.com/wiki/File:Arma2_GER_KSK_medic.jpg
+	//class GER_Soldier_TL_EP1: Banned {};                                  http://community.bistudio.com/wiki/File:Arma2_GER_KSK_tl.jpg
+	class GER_Soldier_Scout_EP1: Banned {};
+	class GER_Soldier_MG_EP1: Banned {};
+        
+//      CIVILIAN ---------------------------------------------------------------
+        
+        class Citizen2_EP1: Banned {};
+	class Citizen3_EP1: Banned {};
+	class Citizen2: Banned {};
+	//class Citizen3: Banned {};
+	class Citizen4: Banned {};
+	class RU_Citizen1: Banned {};
+	class RU_Citizen2: Banned {};
+	class RU_Citizen3: Banned {};
+	class RU_Citizen4: Banned {};
+        
+	//class Worker1: Banned {};
+	class Worker2: Banned {};
+	class Worker3: Banned {};
+	class Worker4: Banned {};
+	class RU_Worker1: Banned {};
+	class RU_Worker2: Banned {};
+	class RU_Worker3: Banned {};
+	class RU_Worker4: Banned {};
+        
+	class Profiteer1: Banned {};
+	class Profiteer2: Banned {};
+	class Profiteer3: Banned {};
+	class Profiteer4: Banned {};
+	class RU_Profiteer1: Banned {};
+	class RU_Profiteer2: Banned {};
+	class RU_Profiteer3: Banned {};
+	class RU_Profiteer4: Banned {};
+        class Profiteer2_EP1: Banned {};
+        
+	//class Rocker1: Banned {};                                             Must have music in our lives - http://community.bistudio.com/wiki/File:Arma2_civ_rocker.jpg
+	//class Rocker2: Banned {};
+	//class Rocker3: Banned {};
+	//class Rocker4: Banned {};
+	class RU_Rocker1: Banned {};
+	class RU_Rocker2: Banned {};
+	class RU_Rocker3: Banned {};
+	class RU_Rocker4: Banned {};
+        
+	class Woodlander1: Banned {};
+	class Woodlander2: Banned {};
+	class Woodlander3: Banned {};
+	class Woodlander4: Banned {};
+	class RU_Woodlander1: Banned {};
+	class RU_Woodlander2: Banned {};
+	class RU_Woodlander3: Banned {};
+	class RU_Woodlander4: Banned {};
+        
+	class Functionary1: Banned {};
+	class Functionary2: Banned {};
+	class RU_Functionary1: Banned {};
+	class RU_Functionary2: Banned {};
+        class Functionary1_EP1: Banned {};
+	class Functionary2_EP1: Banned {};
+        
+	//class Villager1: Banned {};
+	class Villager2: Banned {};
+	class Villager3: Banned {};
+	class Villager4: Banned {};
+	class RU_Villager1: Banned {};
+	class RU_Villager2: Banned {};
+	class RU_Villager3: Banned {};
+	class RU_Villager4: Banned {};
+        
+	class Priest: Banned {};
+	class RU_Priest: Banned {};
+        
+	class Doctor: Banned {};
+	class RU_Doctor: Banned {};
+        
+	class SchoolTeacher: Banned {};
+	class RU_SchoolTeacher: Banned {};
+        
+	class Assistant: Banned {};
+	class RU_Assistant: Banned {};
+        
+	class Pilot: Banned {};
+	class RU_Pilot: Banned {};
+        class Pilot_EP1: Banned {};
+        
+	class Policeman: Banned {};
+	class RU_Policeman: Banned {};
+        
+	class Secretary1: Banned {};
+	class Secretary2: Banned {};
+	class Secretary3: Banned {};
+	class Secretary4: Banned {};
+	class Secretary5: Banned {};
+	class RU_Secretary1: Banned {};
+	class RU_Secretary2: Banned {};
+	class RU_Secretary3: Banned {};
+	class RU_Secretary4: Banned {};
+	class RU_Secretary5: Banned {};
+        
+	//class Sportswoman1: Banned {};                                        Kinda chubby for a sportwoman - http://community.bistudio.com/wiki/File:Arma2_civ_sportswoman.jpg
+	//class Sportswoman2: Banned {};
+	//class Sportswoman3: Banned {};
+	//class Sportswoman4: Banned {};
+	//class Sportswoman5: Banned {};
+	class RU_Sportswoman1: Banned {};
+	class RU_Sportswoman2: Banned {};
+	class RU_Sportswoman3: Banned {};
+	class RU_Sportswoman4: Banned {};
+	class RU_Sportswoman5: Banned {};
+               
+	class Madam1: Banned {};
+	class Madam2: Banned {};
+	class Madam3: Banned {};
+	class Madam4: Banned {};
+	class Madam5: Banned {};
+	class RU_Madam1: Banned {};
+	class RU_Madam2: Banned {};
+	class RU_Madam3: Banned {};
+	class RU_Madam4: Banned {};
+	class RU_Madam5: Banned {};
+        
+	class Farmwife1: Banned {};
+	class Farmwife2: Banned {};
+	class Farmwife3: Banned {};
+	class Farmwife4: Banned {};
+	class Farmwife5: Banned {};
+	class RU_Farmwife1: Banned {};
+	class RU_Farmwife2: Banned {};
+	class RU_Farmwife3: Banned {};
+	class RU_Farmwife4: Banned {};
+	class RU_Farmwife5: Banned {};
+        
+	//class Damsel1: Banned {};                                             Must have women in our life - http://community.bistudio.com/wiki/File:Arma2_civ_damsel.jpg
+	//class Damsel2: Banned {};
+	//class Damsel3: Banned {};
+	//class Damsel4: Banned {};
+	//class Damsel5: Banned {};
+	class RU_Damsel1: Banned {};
+	class RU_Damsel2: Banned {};
+	class RU_Damsel3: Banned {};
+	class RU_Damsel4: Banned {};
+	class RU_Damsel5: Banned {};
+        
+	class HouseWife1: Banned {};
+	class HouseWife2: Banned {};
+	class HouseWife3: Banned {};
+	class HouseWife4: Banned {};
+	class HouseWife5: Banned {};
+	class RU_Housewife1: Banned {};
+	class RU_Housewife2: Banned {};
+	class RU_Housewife3: Banned {};
+	class RU_Housewife4: Banned {};
+	class RU_Housewife5: Banned {};
+        
+	//class Hooker1: Banned {};                                             Must have hookers in our life - http://community.bistudio.com/wiki/File:Arma2_civ_hooker.jpg
+	//class Hooker2: Banned {};
+	//class Hooker3: Banned {};
+	//class Hooker4: Banned {};
+	//class Hooker5: Banned {};
+	class RU_Hooker1: Banned {};
+	class RU_Hooker2: Banned {};
+	class RU_Hooker3: Banned {};
+	class RU_Hooker4: Banned {};
+	class RU_Hooker5: Banned {};
+        
+	class WorkWoman1: Banned {};
+	class WorkWoman2: Banned {};
+	class WorkWoman3: Banned {};
+	class WorkWoman4: Banned {};
+	class WorkWoman5: Banned {};
+	class RU_WorkWoman1: Banned {};
+	class RU_WorkWoman2: Banned {};
+	class RU_WorkWoman3: Banned {};
+	class RU_WorkWoman4: Banned {};
+	class RU_WorkWoman5: Banned {};
+        
+	//class TK_CIV_Takistani01_EP1: Banned {};
+	class TK_CIV_Takistani02_EP1: Banned {};
+	class TK_CIV_Takistani03_EP1: Banned {};
+	class TK_CIV_Takistani04_EP1: Banned {};
+	//class TK_CIV_Takistani05_EP1: Banned {};
+	class TK_CIV_Takistani06_EP1: Banned {};
+	class TK_CIV_Worker01_EP1: Banned {};
+	class TK_CIV_Worker02_EP1: Banned {};
+	class TK_CIV_Woman01_EP1: Banned {};
+	class TK_CIV_Woman02_EP1: Banned {};
+	class TK_CIV_Woman03_EP1: Banned {};
+        
+	//class CIV_EuroWoman01_EP1: Banned {};                                 http://community.bistudio.com/wiki/File:Arma2_SP_CIV_eurowoman1.jpg
+	//class CIV_EuroWoman02_EP1: Banned {};                                 http://community.bistudio.com/wiki/File:Arma2_SP_CIV_eurowoman2.jpg
+        class CIV_EuroMan01_EP1: Banned {};
+	class CIV_EuroMan02_EP1: Banned {};
+        
+	class InvisibleManW_EP1: Banned {};
+	class InvisibleManE_EP1: Banned {};
+	
+        //class CIV_Contractor1_BAF: Banned {};                                 http://community.bistudio.com/wiki/File:Arma2_PMC_contractor1.jpg
+	//class CIV_Contractor2_BAF: Banned {};                                 http://community.bistudio.com/wiki/File:Arma2_PMC_contractor2.jpg
+        
+        class EW_Brown: Banned {};
+	class EW_Lev: Banned {};
+	class EW_Greg: Banned {};
+	class EW_Spec3: Banned {};
+	class EW_Spec4: Banned {};
+	class EW_Miki: Banned {};
+	class EW_Luca: Banned {};
+        
+        //class Dr_Annie_Baker_EP1: Banned {};                                  http://community.bistudio.com/wiki/File:Arma2_SP_CIV_baker.jpg
+        //class Rita_Ensler_EP1: Banned {};                                     http://community.bistudio.com/wiki/File:Arma2_SP_CIV_ensler.jpg
+	//class Haris_Press_EP1: Banned {};                                     http://community.bistudio.com/wiki/File:Arma2_SP_CIV_press.jpg
+	//class Dr_Hladik_EP1: Banned {};                                       http://community.bistudio.com/wiki/File:Arma2_SP_CIV_hladik.jpg
+        class Poet_PMC: Banned {};
+	class Ry_PMC: Banned {};
+	class Reynolds_PMC: Banned {};
+	class Tanny_PMC: Banned {};
+	class Dixon_PMC: Banned {};
+        class ValentinaFit: Banned {};
+	class ValentinaVictim: Banned {};
+        class Drake: Banned {};
+	class Herrera: Banned {};
+	class Pierce: Banned {};
+	class Graves: Banned {};
+	class Drake_Light: Banned {};
+	class Herrera_Light: Banned {};
+	class Pierce_Light: Banned {};
+	class Graves_Light: Banned {};
+
+        // FINAL COMMENTS
+        
+//      These are the skins I believe fit Lingor the best, some more than the
+//      others. Still, we are missing the Lingor specific skins, which I don't
+//      see here. I've tried them out on my server and most of them are missing
+//      gear slots or the possibility to carry backpacks. If this can be fixed
+//      it'd be great for the mod.
+//      If my memory does not fail me, those skins were available on the first
+//      version of DayZ Lingor. I remember running around in Che Guevara shirts.
+
+//      ------------------------------------------------------------------------
+
+//      VEHICLES ---------------------------------------------------------------
+//      VISUAL AID:
+//      ARMA 2      - http://community.bistudio.com/wiki/ArmA_2:_Vehicles
+//      ARMA 2 OA   - http://community.bistudio.com/wiki/ArmA_2_OA:_Vehicles
+//      
+//      OVERALL COMMENTS
+//
+//      I'll divide this category into many sub-sections depending on the type
+//      vehicle we are dealing with and their special characteristics
+//
+
+//      RANDOMS ----------------------------------------------------------------
+
+        //class BAF_ATV_D: Banned {};
+        //class BAF_ATV_W: Banned {};
+        //class VWGolf: Banned {};
+      	//class S1203_TK_CIV_EP1: Banned {};
+	//class S1203_ambulance_EP1: Banned {};                                 
+        //class TowingTractor: Banned {};
+        //class MMT_USMC: Banned {};                                            Why ban bikes?
+	//class MMT_Civ: Banned {};
+
+	class WarfareSalvageTruck_USMC: Banned {};
+	class WarfareSupplyTruck_USMC: Banned {};
+	class WarfareReammoTruck_USMC: Banned {};
+	class WarfareSalvageTruck_RU: Banned {};
+	class WarfareSupplyTruck_RU: Banned {};
+	class WarfareReammoTruck_RU: Banned {};
+	class WarfareSalvageTruck_CDF: Banned {};
+	class WarfareSupplyTruck_CDF: Banned {};
+	class WarfareReammoTruck_CDF: Banned {};
+	class WarfareSalvageTruck_INS: Banned {};
+	class WarfareSupplyTruck_INS: Banned {};
+	class WarfareReammoTruck_INS: Banned {};
+	class WarfareSalvageTruck_Gue: Banned {};
+	class WarfareSupplyTruck_Gue: Banned {};
+	class WarfareReammoTruck_Gue: Banned {};
+	class WarfareRepairTruck_Gue: Banned {};
+
+//      HMMWVS -----------------------------------------------------------------
+
+	//class HMMWV: Banned {};
+        //class HMMWV_DES_EP1: Banned {};
+        //class HMMWV_M1035_DES_EP1: Banned {};
+        
+        //class HMMWV_Ambulance: Banned {};
+        //class HMMWV_Ambulance_DES_EP1: Banned {};
+	//class HMMWV_Ambulance_CZ_DES_EP1: Banned {};
+        
+        //class HMMWV_Armored: Banned {};                                         // Mounted M240 with shield. Not sure if the vehicle is armored itself.
+        
+        //class HMMWV_M2: Banned {};                                              // Mounted 50 cal without shield.
+        class HMMWV_M998_crows_M2_DES_EP1: Banned {};                           // Mounted 50 cal with shield and computer guidance.
+        //class HMMWV_M1151_M2_CZ_DES_EP1: Banned {};                             // Mounted 50 cal with shield.
+        //class HMMWV_M1151_M2_DES_EP1: Banned {};                                // Mounted 50 cal with shield.
+        
+	//class HMMWV_TOW: Banned {};                                             // Mounted TOW launcher.
+        //class HMMWV_TOW_DES_EP1: Banned {};                                     // Mounted TOW launcher.
+        
+	class HMMWV_MK19: Banned {};                                            // Mounted Mk19 grenade launcher.
+        class HMMWV_MK19_DES_EP1: Banned {};                                    // Mounted Mk19 grenade launcher.
+        class HMMWV_M998_crows_MK19_DES_EP1: Banned {};                         // Mounted Mk19 grenade launcher and computer guidance.
+        
+        //class HMMWV_M998A2_SOV_DES_EP1: Banned {};                              //  Mounted Mk19 grenade launcher and frontal M240. Looks awesome,
+                                                                                //  perhaps the Mk19 can be removed or replaced with an M2 or another M240 via script?
+        
+        class HMMWV_Avenger: Banned {};                                         // Mounted dual stinger launchers.
+        class HMMWV_Avenger_DES_EP1: Banned {};                                 // Mounted dual stinger launchers.
+        
+	class HMMWV_Terminal_EP1: Banned {};                                    // Not sure what this vehicle can do... no offensive capabilities that I see.
+
+//      UAZS -------------------------------------------------------------------
+
+        //class UAZ_INS: Banned {};
+        
+        //class UAZ_MG_INS: Banned {};                                            // Mounted DShKM 12.7mm gun without shield.
+        //class UAZ_MG_CDF: Banned {};                                            // Mounted DShKM 12.7mm gun without shield.
+        //class UAZ_MG_TK_EP1: Banned {};                                         // Mounted DShKM 12.7mm gun without shield.
+        
+	class UAZ_AGS30_CDF: Banned {};                                         // Mounted AGS-30 greande launcher without shield.
+        class UAZ_AGS30_RU: Banned {};                                          // Mounted AGS-30 greande launcher without shield.
+	class UAZ_AGS30_INS: Banned {};                                         // Mounted AGS-30 greande launcher without shield.
+        class UAZ_AGS30_TK_EP1: Banned {};                                      // Mounted AGS-30 greande launcher without shield.
+        
+	//class UAZ_SPG9_INS: Banned {};                                          // Mounted SPG-9 AT launcher without shield.
+
+//      PICK-UPS / OFFROADS / LAND ROVERS / SUVS -------------------------------
+
+	//class Pickup_PK_GUE: Banned {};                                         // Mounted PKT 7.62mm without shield.
+	//class Pickup_PK_INS: Banned {};                                         // Mounted PKT 7.62mm without shield.
+        //class Pickup_PK_TK_GUE_EP1: Banned {};                                  // Mounted PKT 7.62mm without shield.
+        
+	//class Offroad_DSHKM_Gue: Banned {};                                     // Mounted DShKM 12.7mm gun without shield.
+	//class Offroad_DSHKM_INS: Banned {};                                     // Mounted DShKM 12.7mm gun without shield.
+	//class Offroad_DSHKM_TK_GUE_EP1: Banned {};                              // Mounted DShKM 12.7mm gun without shield.
+	
+        //class Offroad_SPG9_TK_GUE_EP1: Banned {};                               // Mounted SPG-9 AT launcher without shield.
+        //class Offroad_SPG9_Gue: Banned {};                                      // Mounted SPG-9 AT launcher without shield.
+        
+        //class BAF_Offroad_D: Banned {};
+        //class BAF_Offroad_W: Banned {};
+        
+        //class LandRover_MG_TK_INS_EP1: Banned {};                               // Mounted 50 cal without shield.
+	//class LandRover_MG_TK_EP1: Banned {};                                   // Mounted 50 cal without shield.
+	
+	//class LandRover_SPG9_TK_INS_EP1: Banned {};                             // Mounted SPG-9 AT launcher without shield.
+	//class LandRover_SPG9_TK_EP1: Banned {};                                 // Mounted SPG-9 AT launcher without shield.
+	
+        class LandRover_Special_CZ_EP1: Banned {};                              // Frontal PKT 7.62mm & Mounted AGS-30 grenade launcher.
+        
+        //class SUV_Base_EP1: Banned {};
+        class SUV_UN_EP1: Banned {};
+        class SUV_PMC_BAF: Banned {};
+        
+        //class ArmoredSUV_PMC: Banned {};                                        // Mounted M134 minigun and probably armored.
+        
+        class ArmoredSUV_GunNotCommanding_PMC: Banned {};                       // Not sure what this is.
+        
+//      URALS / KAMAZS / MTVRS / V3SS ------------------------------------------
+              
+        //class UralOpen_CDF: Banned {};
+        //class Ural_UN_EP1: Banned {};
+        
+	class UralRepair_CDF: Banned {};
+        class UralRepair_INS: Banned {};
+        class UralRepair_TK_EP1: Banned {};
+        
+	class UralReammo_CDF: Banned {};
+        class UralReammo_INS: Banned {};
+        class UralReammo_TK_EP1: Banned {};
+
+	//class UralRefuel_CDF: Banned {};
+        //class UralRefuel_INS: Banned {};
+        //class UralRefuel_TK_EP1: Banned {};
+        
+	class UralSupply_TK_EP1: Banned {};
+	class UralSalvage_TK_EP1: Banned {};
+        
+	//class Ural_ZU23_TK_EP1: Banned {};                                      // Back-Mounted ZU-23 23mm anti-air gun.
+	class Ural_ZU23_TK_GUE_EP1: Banned {};                                  // Back-Mounted ZU-23 23mm anti-air gun.
+        class Ural_ZU23_INS: Banned {};                                         // Back-Mounted ZU-23 23mm anti-air gun.
+        class Ural_ZU23_Gue: Banned {};                                         // Back-Mounted ZU-23 23mm anti-air gun.
+        class Ural_ZU23_CDF: Banned {};                                         // Back-Mounted ZU-23 23mm anti-air gun.
+               
+        //class Kamaz: Banned {};
+	//class KamazOpen: Banned {};
+        
+	class KamazRepair: Banned {};
+        
+	class KamazReammo: Banned {};
+        
+	//class KamazRefuel: Banned {};
+        
+	//class MTVR: Banned {};
+        //class MTVR_DES_EP1: Banned {};
+        
+	class MtvrReammo: Banned {};
+        class MtvrReammo_DES_EP1: Banned {};
+        
+	//class MtvrRefuel: Banned {};
+        //class MtvrRefuel_DES_EP1: Banned {};
+        
+	class MtvrRepair: Banned {};
+        class MtvrRepair_DES_EP1: Banned {};      
+
+	class MtvrSupply_DES_EP1: Banned {};
+	class MtvrSalvage_DES_EP1: Banned {};
+         
+        //class V3S_Civ: Banned {};
+	//class V3S_Gue: Banned {};
+        //class V3S_TK_EP1: Banned {};
+	//class V3S_Open_TK_EP1: Banned {};
+	//class V3S_Open_TK_CIV_EP1: Banned {};
+	//class V3S_TK_GUE_EP1: Banned {};
+        
+	//class V3S_Refuel_TK_GUE_EP1: Banned {};
+        
+	class V3S_Repair_TK_GUE_EP1: Banned {};
+        
+	class V3S_Reammo_TK_GUE_EP1: Banned {};
+        
+	class V3S_Supply_TK_GUE_EP1: Banned {};
+	class V3S_Salvage_TK_GUE_EP1: Banned {};
+        
+//      JACKALS ----------------------------------------------------------------
+
+	//class BAF_Jackal2_L2A1_D: Banned {};                                    // Frontal M240 and mounted L111A1 machine gun.
+        //class BAF_Jackal2_L2A1_W: Banned {};                                    // Frontal M240 and mounted L111A1 machine gun.
+        
+	class BAF_Jackal2_GMG_D: Banned {};                                     // Frontal M240 and mounted GMG grenade launcher.
+	class BAF_Jackal2_GMG_W: Banned {};                                     // Frontal M240 and mounted GMG grenade launcher.
+
+//      SELF-PROPELLED ROCKET ARTILLERY ----------------------------------------
+
+        //class GRAD_CDF: Banned {};                                            These won't be thrown into the vehicle rotation, but they could be useful for events.
+        class GRAD_INS: Banned {};       
+	class GRAD_RU: Banned {};
+        class GRAD_TK_EP1: Banned {};
+
+        //class MLRS: Banned {};                                                These won't be thrown into the vehicle rotation, but they could be fun to have anyway.
+	class MLRS_DES_EP1: Banned {};
+
+//      ARMORED ANTI-AIR -------------------------------------------------------
+
+        //class ZSU_INS: Banned {};                                             These won't be thrown into the vehicle rotation, but they could be fun to have anyway.
+        class ZSU_CDF: Banned {};
+        class ZSU_TK_EP1: Banned {};
+        
+        //class 2S6M_Tunguska: Banned {};                                       These won't be thrown into the vehicle rotation, but they could be fun to have anyway.
+
+//      APCS ------------------------------------------------------------------- 
+
+        //class BTR40_TK_GUE_EP1: Banned {};                                      // Unnarmed, lightly armored.
+        //class BTR40_TK_INS_EP1: Banned {};                                      // Unnarmed, lightly armored.
+        
+	//class BTR40_MG_TK_INS_EP1: Banned {};                                   // Mounted DShKM 12.7mm gun without shield, lightly armored.
+	//class BTR40_MG_TK_GUE_EP1: Banned {};                                   // Mounted DShKM 12.7mm gun without shield, lightly armored.
+        
+	class BTR60_TK_EP1: Banned {};                                          // KPVT 14.5mm cannon and one PKT.
+        
+        //class GAZ_Vodnik: Banned {};                                            // Dual PKT machine guns, front and back.
+        
+        class GAZ_Vodnik_MedEvac: Banned {};
+        
+        class GAZ_Vodnik_HMG: Banned {};                                        // 2A42 30mm  cannon and one PKT.
+	
+	class BMP2_Gue: Banned {};                                              // 2A42 30mm cannon, mounted PKT and Konkurs 9M113 rockets.
+        class BMP2_CDF: Banned {};                                              // 2A42 30mm cannon, mounted PKT and Konkurs 9M113 rockets.
+        class BMP2_INS: Banned {};                                              // 2A42 30mm cannon, mounted PKT and Konkurs 9M113 rockets.
+        class BMP2_UN_EP1: Banned {};                                           // 2A42 30mm cannon, mounted PKT and Konkurs 9M113 rockets.
+	class BMP2_TK_EP1: Banned {};                                           // 2A42 30mm cannon, mounted PKT and Konkurs 9M113 rockets.
+        
+	//class BMP2_Ambul_CDF: Banned {};                                        // Unnarmed.
+	//class BMP2_Ambul_INS: Banned {};                                        // Unnarmed.
+        
+	//class BMP2_HQ_INS: Banned {};                                           // Mounted PKT 7.62mm.
+        //class BMP2_HQ_CDF: Banned {};                                           // Mounted PKT 7.62mm.
+	//class BMP2_HQ_TK_EP1: Banned {};                                        // Mounted PKT 7.62mm.
+
+        class BMP3: Banned {};                                                  // 2A42 30mm cannon, 2A70 100mm cannon, 9M117M1 Arkan Rockets and 3 PKTs.
+
+	//class M113_TK_EP1: Banned {};                                           // M2 .50 cal machine gun.
+	//class M113_UN_EP1: Banned {};                                           // M2 .50 cal machine gun.   
+        
+	//class M113Ambul_TK_EP1: Banned {};                                      // Unnarmed.
+        //class M113Ambul_UN_EP1: Banned {};                                      // Unnarmed.
+	
+	class BRDM2_CDF: Banned {};                                             // KPVT 14.5mm cannon and one PKT.
+        class BRDM2_INS: Banned {};                                             // KPVT 14.5mm cannon and one PKT.
+        class BRDM2_Gue: Banned {};                                             // KPVT 14.5mm cannon and one PKT.
+	class BRDM2_TK_EP1: Banned {};                                          // KPVT 14.5mm cannon and one PKT.
+        class BRDM2_TK_GUE_EP1: Banned {};                                      // KPVT 14.5mm cannon and one PKT.
+        
+	class BRDM2_ATGM_CDF: Banned {};                                        // Konkurs 9M113 rockets.
+        class BRDM2_ATGM_INS: Banned {};                                        // Konkurs 9M113 rockets.
+        class BRDM2_ATGM_TK_EP1: Banned {};                                     // Konkurs 9M113 rockets.
+               
+	//class BRDM2_HQ_TK_GUE_EP1: Banned {};                                   // Mounted PKT 7.62mm.
+        //class BRDM2_HQ_Gue: Banned {};                                          // Mounted PKT 7.62mm.
+        
+        class BTR90: Banned {};                                                 // 2A42 30mm cannon, Konkurs 9M113 rockets, AGS-17 grenade launcher and 1 PKT.
+        
+	//class BTR90_HQ: Banned {};                                              // Mounted PKT 7.62mm.
+       
+        class LAV25: Banned {};                                                 // M242 25mm cannon and mounted M240.
+        
+	//class LAV25_HQ: Banned {};                                              // Mounted M240.
+
+//      TANKS ------------------------------------------------------------------      
+
+        // Tanks are all pretty OP for DayZ, so I'm not going to review their
+        // weaponry. I'd still like some to remain unbanned in order to be able
+        // to use them in events though.
+
+        class T34: Banned {};
+        class T34_TK_EP1: Banned {};
+	class T34_TK_GUE_EP1: Banned {};
+        
+        class T55_TK_EP1: Banned {};
+	class T55_TK_GUE_EP1: Banned {};
+        
+        //class T72_CDF: Banned {};                                             Won't be thrown into spawn rotation, but it'd be good to have a tank around for events.
+	class T72_Gue: Banned {};
+        class T72_INS: Banned {};
+	class T72_RU: Banned {};
+        class T72_CDF: Banned {};
+	class T72_TK_EP1: Banned {};
+       
+        class T90: Banned {}; 
+        
+	class M1A1: Banned {};
+	class M1A2_TUSK_MG: Banned {};
+        class M1A1_US_DES_EP1: Banned {};
+	class M1A2_US_TUSK_MG_EP1: Banned {};
+  
+        class M2A2_EP1: Banned {};
+	class M2A3_EP1: Banned {};
+               
+        class BAF_FV510_D: Banned {};
+	class BAF_FV510_W: Banned {};
+
+        class M1126_ICV_M2_EP1: Banned {};
+	class M1126_ICV_mk19_EP1: Banned {};
+	class M1130_CV_EP1: Banned {};
+	class M1129_MC_EP1: Banned {};
+	class M1135_ATGMV_EP1: Banned {};
+	class M1128_MGS_EP1: Banned {};
+	class M1133_MEV_EP1: Banned {};
+        
+	class M6_EP1: Banned {};
+        
+        class AAV: Banned {};
+	class AAV_cutscene: Banned {}; 
+        
+        //class MAZ_543_SCUD_TK_EP1: Banned {};                                   // Doesn't actually do anything when firing the SCUD.
+        
+//      SEA VEHICLES -----------------------------------------------------------
+        
+        //class RHIB: Banned {};                                                  // M2 .50cal frontal gun.                                         
+        //class RHIB2Turret: Banned {};                                           // M2 .50cal frontal gun and Mk19 rear grenade launcher. - Debatable... not sure about that grenade launcher.
+        
+	//Zodiac: Banned {};
+	//class PBX: Banned {};
+        
+        class SeaFox: Banned {};
+	class SeaFox_AllwaysEnemy: Banned {};
+	class SeaFox_EP1: Banned {};
+	class SeaFox_AllwaysEnemy_EP1: Banned {};
+        
+//      HELICOPTERS ------------------------------------------------------------
+
+	class AH1Z: Banned {};                                                  // Armed to the teeth.
+	
+        class AH64D: Banned {};                                                 // Armed to the teeth.
+	class AH64D_Sidewinders: Banned {};                                     // Armed to the teeth.
+        class AH64D_EP1: Banned {};                                             // Armed to the teeth.
+        class BAF_Apache_AH1_D: Banned {};                                      // Armed to the teeth.
+        
+        //class MH60S: Banned {};                                                 // 2 M134 railguns.
+	//class UH60M_EP1: Banned {};                                             // 2 M240 machineguns.
+	
+        //class UH60M_MEV_EP1: Banned {};                                         // Unnarmed.
+             
+	//class Mi17_Ins: Banned {};                                              // 2 Mounted PKTs 7.62mm.
+	//class Mi17_CDF: Banned {};                                              // 2 Mounted PKTs 7.62mm.
+        //class Mi17_TK_EP1: Banned {};                                           // 2 Mounted PKTs 7.62mm.
+	//class Mi171Sh_CZ_EP1: Banned {};                                        // 3 mounted PKTs 7.62mm.
+        //class Mi17_UN_CDF_EP1: Banned {};                                       // 2 Mounted PKTs 7.62mm.
+        
+        class Mi17_rockets_RU: Banned {};                                       // S-5 Rockets and 2 moutned PKTs 7.62mm.
+	class Mi171Sh_rockets_CZ_EP1: Banned {};                                // S-5 Rockets and 3 moutned PKTs 7.62mm.
+            
+        //class Mi17_medevac_Ins: Banned {};                                      // Unnarmed.
+	//class Mi17_medevac_CDF: Banned {};                                      // Unnarmed.
+	//class Mi17_medevac_RU: Banned {};                                       // Unnarmed.
+	
+        //class Mi17_Civilian: Banned {};                                         // Unnarmed.
+           
+	class Mi24_V: Banned {};                                                // Armed to the teeth.
+	class Mi24_P: Banned {};                                                // Armed to the teeth.
+	class Mi24_D: Banned {};                                                // Armed to the teeth.
+        class Mi24_D_TK_EP1: Banned {};                                         // Armed to the teeth.                                    
+   
+	class Ka52: Banned {};                                                  // Armed to the teeth. 
+	class Ka52Black: Banned {};                                             // Armed to the teeth.
+               
+	class UH1Y: Banned {};                                                  // Dual M134 railguns and hydra rockets.
+	class UH1Y_cutscene: Banned {};                                         // Don't know what this is.
+        
+	//class UH1H_TK_EP1: Banned {};                                           // Dual M240s.
+	//class UH1H_TK_GUE_EP1: Banned {};                                       // Dual M240s.
+
+	//class AH6J_EP1: Banned {};                                              // Dual M134 railguns and hydra rockets. - Fragility compensates for rockets I believe. We can always spawn the pods empty.
+	//class AH6X_EP1: Banned {};                                              // Unnarmed.
+	//class MH6J_EP1: Banned {};                                              // Unnarmed.
+               
+	//class CH_47F_EP1: Banned {};                                            // Dual M134 railguns and 1 M240 machine gun.
+        //class CH_47F_BAF: Banned {};                                            // Dual M134 railguns and 1 M240 machine gun.
+             
+	//class Ka137_PMC: Banned {};                                           // Unnarmed.
+	//class Ka137_MG_PMC: Banned {};                                          // PKT 7.62mm. How the hell do you fit two people on this thing?
+           
+	class Ka60_GL_PMC: Banned {};                                           // S-5 rockets and M32 grenade launcher.
+	class Ka60_PMC: Banned {};                                              // S-5 rockets.
+     
+	class AW159_Lynx_BAF: Banned {};                                        // M621 machinegun, CRV7 rockets and Laser Designator.
+        
+	//class BAF_Merlin_HC3_D: Banned {};                                      // Unnarmed.
+
+	//class MV22: Banned {};                                                // Unnarmed.
+
+//      AIRPLANES --------------------------------------------------------------
+
+//      Same as with tanks, most airplanes are overpowered for DayZ, there is
+//      however, a few commercial ones that we should certainely keep.
+//      On a secondary note, we do enjoy our dogfighting on slow nights...
+                
+        //class An2_1_TK_CIV_EP1: Banned {};
+	//class An2_2_TK_CIV_EP1: Banned {};
+	//class An2_TK_EP1: Banned {};
+        
+        //class C130J_US_EP1: Banned {};
+        //class C130J: Banned {};
+        
+        //class GNT_C185T: Banned {};
+	//class GNT_C185R: Banned {};
+	//class GNT_C185C: Banned {};
+	//class GNT_C185U: Banned {};
+	//class GNT_C185F: Banned {};
+	//class GNT_C185E: Banned {};
+        
+        class Su25_CDF: Banned {};
+	class Su25_Ins: Banned {};
+        class Su25_TK_EP1: Banned {};
+        
+        class Su34: Banned {};
+        class Su39: Banned {};
+        
+        class A10: Banned {};
+        
+        class AV8B2: Banned {};
+	class AV8B: Banned {};
+        
+        class F35B: Banned {};
+        
+        //class L39_TK_EP1: Banned {};                                          Seems like the kind of plane Lingor could afford. Not relevant, just to have one to play around with when bored.
+        
+        class MQ9PredatorB_US_EP1: Banned {};
+	class Chukar_EP1: Banned {};
+	class Chukar_AllwaysEnemy_EP1: Banned {};
+        class MQ9PredatorB: Banned {};
+	class MQ9PredatorB_campaign: Banned {};
+        class Chukar: Banned {};
+	class Chukar_AllwaysEnemy: Banned {};
+        class Pchela1T: Banned {};
+        
+//      FIXED GUN POSITIONS ----------------------------------------------------
+//
+//      REFERENCES:
+//      ARMA 2      - http://community.bistudio.com/wiki/ArmA_2:_Weapons
+
+//      OVERALL COMMENTS
+
+//      I just realized that some of these tripods can be unmounted and packed
+//      into a backpack like item that you can carry around and re-deploy...
+
+//      SEARCHLIGHTS -----------------------------------------------------------
+//      Why would these be banned in the first place?
+
+	//class SearchLight: Banned {};
+	class SearchLight_INS: Banned {};
+	class SearchLight_CDF: Banned {};
+	class SearchLight_RUS: Banned {};
+	class SearchLight_Gue: Banned {};
+        class SearchLight_US_EP1: Banned {};
+        class SearchLight_TK_INS_EP1: Banned {};
+        class SearchLight_TK_EP1: Banned {};
+        class SearchLight_TK_GUE_EP1: Banned {};
+        class SearchLight_UN_EP1: Banned {};
+        
+//      LONG RANGE ARTILLERY ---------------------------------------------------
+ 
+        //class M119: Banned {};                                                Hell, even if it's just a prop, it'd be fun to have one around.
+        class M119_US_EP1: Banned {};
+        
+        class ZU23_Ins: Banned {};
+	class ZU23_CDF: Banned {};
+	class ZU23_Gue: Banned {};
+        class ZU23_TK_GUE_EP1: Banned {};
+        class ZU23_TK_EP1: Banned {};
+        class ZU23_TK_INS_EP1: Banned {};
+        
+        class D30_Ins: Banned {};
+	class D30_CDF: Banned {};
+	class D30_RU: Banned {};
+        class D30_TK_GUE_EP1: Banned {};
+	class D30_TK_INS_EP1: Banned {};
+        class D30_TK_EP1: Banned {};
+        
+//      SHORT RANGE ARTILLERY --------------------------------------------------
+
+        //class 2b14_82mm: Banned {};                                           Could be extremely fun to play around with, specially if it can be packed (takes backpack slot).
+	class 2b14_82mm_CDF: Banned {};
+	class 2b14_82mm_INS: Banned {};
+	class 2b14_82mm_GUE: Banned {};
+        class 2b14_82mm_TK_GUE_EP1: Banned {};
+        class 2b14_82mm_TK_INS_EP1: Banned {};
+        class 2b14_82mm_TK_EP1: Banned {};
+        class 2b14_82mm_CZ_EP1: Banned {};
+        
+        class Warfare2b14_82mm: Banned {};
+	class Warfare2b14_82mm_CDF: Banned {};
+	class Warfare2b14_82mm_INS: Banned {};
+	class Warfare2b14_82mm_GUE: Banned {};
+        
+        class M252: Banned {};
+        class M252_US_EP1: Banned {};
+        
+//      .50CAL / 12.7mm  MACHINE GUNS ------------------------------------------        
+        
+        //class M2StaticMG: Banned {};                                          
+        class M2StaticMG_US_EP1: Banned {};
+        //class M2HD_mini_TriPod_US_EP1: Banned {};                             
+        class M2HD_mini_TriPod_US_EP1: Banned {};
+        class M2HD_mini_TriPod: Banned {};
+        
+        //class BAF_L2A1_Tripod_D: Banned {};                                   
+	class BAF_L2A1_Tripod_W: Banned {};
+	//class BAF_L2A1_Minitripod_D: Banned {};                               
+	class BAF_L2A1_Minitripod_W: Banned {};
+                
+	//class DSHKM_Ins: Banned {};                                           
+	class DSHKM_CDF: Banned {};
+	class DSHKM_Gue: Banned {};
+        //class DSHkM_Mini_TriPod: Banned {};                                   
+	class DSHkM_Mini_TriPod_CDF: Banned {};
+        class DSHKM_RU: Banned {};
+        class DSHKM_TK_GUE_EP1: Banned {};
+	class DSHkM_Mini_TriPod_TK_GUE_EP1: Banned {};
+        class DSHKM_TK_INS_EP1: Banned {};
+	class DSHkM_Mini_TriPod_TK_INS_EP1: Banned {};
+        class DSHKM_CZ_EP1: Banned {};
+        
+        //class KORD: Banned {};
+	class KORD_high: Banned {};
+        //class KORD_UN_EP1: Banned {};
+	class KORD_high_UN_EP1: Banned {};
+        class KORD_TK_EP1: Banned {};
+	class KORD_high_TK_EP1: Banned {};
+        
+//      7.62mm MACHINE GUNS ----------------------------------------------------        
+        
+        //class BAF_GPMG_Minitripod_D: Banned {};
+	class BAF_GPMG_Minitripod_W: Banned {};
+        
+//      GRENADE LAUNCHERS ------------------------------------------------------
+        
+	class AGS_Ins: Banned {};
+	class AGS_CDF: Banned {};
+	class AGS_RU: Banned {};
+        class AGS_TK_GUE_EP1: Banned {};
+        class AGS_TK_EP1: Banned {};
+        class AGS_UN_EP1: Banned {};
+        class AGS_CZ_EP1: Banned {};
+        class AGS_TK_INS_EP1: Banned {};
+        
+        class BAF_GMG_Tripod_D: Banned {};
+	class BAF_GMG_Tripod_W: Banned {};
+        
+        class MK19_TriPod: Banned {};
+        class MK19_TriPod_US_EP1: Banned {};
+	
+//      RPG AND MISSILE LAUNCHERS ----------------------------------------------  
+               
+	//class Metis: Banned {};
+        //class Metis_TK_EP1: Banned {};
+ 
+	//class SPG9_Gue: Banned {};
+	class SPG9_CDF: Banned {};
+	class SPG9_Ins: Banned {};
+        class SPG9_TK_GUE_EP1: Banned {};
+        class SPG9_TK_INS_EP1: Banned {};
+                
+	class Stinger_Pod: Banned {};
+        class Stinger_Pod_US_EP1: Banned {};
+        
+	//class TOW_TriPod: Banned {};
+        class TOW_TriPod_US_EP1: Banned {};
+        
+	//class Igla_AA_pod_East: Banned {};
+        class Igla_AA_pod_TK_EP1: Banned {};
+        
+//      FORTIFIED GUN POSITIONS ------------------------------------------------
+
+        //class USMC_WarfareBMGNest_M240: Banned {};
+	//class RU_WarfareBMGNest_PK: Banned {};
+	//class GUE_WarfareBMGNest_PK: Banned {};
+	//class Ins_WarfareBMGNest_PK: Banned {};
+	//class CDF_WarfareBMGNest_PK: Banned {};
+        //class Fort_Nest_M240: Banned {};
+        //class WarfareBMGNest_M240_US_EP1: Banned {};
+        //class WarfareBMGNest_PK_TK_GUE_EP1: Banned {};
+        //class WarfareBMGNest_PK_TK_EP1: Banned {};
+
+//      MISCS AND RANDOMS ------------------------------------------------------
+
+        class ParachuteMediumWest_noGeometry_PMC: Banned {};
+        class Steerable_Parachute_EP1: Banned {};
+        class Parachute_US_EP1: Banned {};
+	class Parachute_TK_EP1: Banned {};
+	class Parachute_TK_GUE_EP1: Banned {};
+	class ParachuteBigWest_EP1: Banned {};
+	class ParachuteBigEast_EP1: Banned {};
+	class ParachuteMediumWest_EP1: Banned {};
+	class ParachuteMediumEast_EP1: Banned {};
+        
+        class CruiseMissile1: Banned {};
+	class CruiseMissile2: Banned {};
+        
+        //class UH1Wreck: Banned {};
+	//class UH60_wreck_EP1: Banned {};
+        
+};
