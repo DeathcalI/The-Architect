@@ -1,0 +1,1380 @@
+private["_obj","_type","_config","_positions","_iPos","_nearBy","_itemType","_itemTypes","_itemChances","_lootChance","_weights","_cntWeights","_index","_LootClass"];
+ 
+_obj =                  _this select 0;
+_type =                 typeOf _obj;
+_config =               configFile >> "CfgBuildingLoot" >> _type;
+_positions =    [] + getArray (_config >> "lootPos");
+//_itemTypes =  [] + getArray (_config >> "itemType"); // Default System
+_lootChance =   getNumber (_config >> "lootChance");
+ 
+//------------------//
+//CUSTOM LOOT SPAWNS//
+//------------------//
+_itemTypes = []; //Initialise array
+_itemChance = []; //Initialise array
+ 
+switch (_type) do { //Assign building classes
+        case "Land_HouseV_1I4": { _LootClass = "Residential"; };
+        case "Land_kulna": { _LootClass = "Residential"; };
+        case "Land_Ind_Workshop01_01": { _LootClass = "Industrial"; };
+        case "Land_Ind_Garage01": { _LootClass = "Industrial"; };
+        case "Land_Ind_Workshop01_0": { _LootClass = "Industrial"; };
+        case "Land_Ind_Workshop01_04": { _LootClass = "Industrial"; };
+        case "Land_Ind_Workshop01_L": { _LootClass = "Industrial"; };
+        case "Land_Hangar_2": { _LootClass = "Industrial"; };
+        case "Land_hut06": { _LootClass = "Residential"; };
+        case "Land_stodola_old_open": { _LootClass = "Farm"; };
+        case "Land_A_FuelStation_Build": { _LootClass = "Industrial"; };
+        case "Land_A_GeneralStore_01a": { _LootClass = "Supermarket"; };
+        case "Land_A_GeneralStore_01": { _LootClass = "Residential"; };
+        case "Land_Farm_Cowshed_a": { _LootClass = "Farm"; };
+        case "Land_stodola_open": { _LootClass = "Farm"; };
+        case "Land_Barn_W_01": { _LootClass = "Farm"; };
+        case "Land_Hlidac_budka": { _LootClass = "Residential"; };
+        case "Land_HouseV2_02_Interier": { _LootClass = "Residential"; };
+        case "Land_a_stationhouse": { _LootClass = "Military"; };
+        case "Land_Mil_ControlTower": { _LootClass = "Military"; };
+		case "Land_Mil_ControlTower_EP1": { _LootClass = "Military"; };
+        case "Land_SS_hangar": { _LootClass = "Military"; };
+        case "Land_A_Pub_01": { _LootClass = "Residential"; };
+        case "Land_HouseB_Tenement": { _LootClass = "Office"; };
+        case "Land_A_Hospital": { _LootClass = "Hospital"; };
+        case "Land_Panelak": { _LootClass = "Office"; };
+        case "Land_Panelak2": { _LootClass = "Office"; };
+        case "Land_Shed_Ind02": { _LootClass = "Industrial"; };
+        case "Land_Shed_wooden": { _LootClass = "Industrial"; };
+        case "Land_Misc_PowerStation": { _LootClass = "Industrial"; };
+        case "Land_HouseBlock_A1_1": { _LootClass = "Residential"; };
+        case "Land_Shed_W01": { _LootClass = "Industrial"; };
+        case "Land_HouseV_1I1": { _LootClass = "Residential"; };
+        case "Land_Tovarna2": { _LootClass = "Industrial"; };
+        case "Land_rail_station_big": { _LootClass = "Office"; };
+        case "Land_Ind_Vysypka": { _LootClass = "Industrial"; };
+        case "Land_A_MunicipalOffice": { _LootClass = "Residential"; };
+        case "Land_A_Office01": { _LootClass = "Office"; };
+        case "Land_A_Office02": { _LootClass = "Office"; };
+        case "Land_A_BuildingWIP": { _LootClass = "Industrial"; };
+        case "Land_Church_01": { _LootClass = "Church"; };
+        case "Land_Church_03": { _LootClass = "Church"; };
+        case "Land_Church_02": { _LootClass = "Church"; };
+        case "Land_Church_02a": { _LootClass = "Church"; };
+        case "Land_Church_05R": { _LootClass = "Church"; };
+        case "Land_Mil_Barracks_i": { _LootClass = "MilitarySpecial"; };
+        case "Land_A_TVTower_Base": { _LootClass = "Industrial"; };
+        case "Land_Mil_House": { _LootClass = "Military"; };
+        case "Land_Misc_Cargo1Ao": { _LootClass = "Industrial"; };
+        case "Land_Misc_Cargo1Bo": { _LootClass = "Industrial"; };
+        case "Land_Nav_Boathouse": { _LootClass = "Industrial"; };
+        case "Land_ruin_01": { _LootClass = "Residential"; };
+        case "Land_wagon_box": { _LootClass = "Industrial"; };
+        case "Land_HouseV2_04_interier": { _LootClass = "Residential"; };
+        case "Land_HouseV2_01A": { _LootClass = "Residential"; };
+        case "Land_psi_bouda": { _LootClass = "Residential"; };
+        case "Land_KBud": { _LootClass = "Residential"; };
+        case "Land_A_Castle_Bergfrit": { _LootClass = "Residential"; };
+        case "Land_A_Castle_Stairs_A": { _LootClass = "Residential"; };
+        case "Land_A_Castle_Gate": { _LootClass = "Residential"; };
+        case "Land_Mil_Barracks": { _LootClass = "Military"; };
+		case "Land_Mil_Barracks_i_EP1": { _LootClass = "Military"; };
+        case "Land_Mil_Barracks_L": { _LootClass = "Military"; };
+        case "Land_Barn_W_02": { _LootClass = "Farm"; };
+        case "Land_sara_domek_zluty": { _LootClass = "Residential"; };
+        case "Land_HouseV_3I4": { _LootClass = "Residential"; };
+        case "Land_HouseV_3I1": { _LootClass = "Residential"; };
+		case "Land_HouseV_1L2": { _LootClass = "Residential"; };
+		case "Land_HouseV_1T": { _LootClass = "Residential"; };
+		case "Land_telek1": { _LootClass = "Industrial"; };
+		case "Land_Rail_House_01": { _LootClass = "Industrial"; };
+		case "Land_HouseV_2I": { _LootClass = "Residential"; };
+		case "Land_Misc_deerstand": { _LootClass = "Military"; };
+		case "Camp": { _LootClass = "Military"; };
+		case "CampEast": { _LootClass = "Military"; };
+		case "CampEast_EP1": { _LootClass = "Military"; };
+		case "Land_Ind_Shed_02_main": { _LootClass = "Residential"; };
+		case "HouseRoaming": { _LootClass = "Residential"; };
+		case "FarmRoaming": { _LootClass = "Farm"; };
+		case "Land_House_C_1_EP1": { _LootClass = "Residential"; };
+		case "Land_House_C_2_EP1": { _LootClass = "Residential"; };
+		case "Land_House_C_3_EP1": { _LootClass = "Residential"; };
+		case "Land_House_C_4_EP1": { _LootClass = "Residential"; };
+		case "Land_House_C_5_EP1": { _LootClass = "Residential"; };
+		case "Land_House_C_5_V2_EP1": { _LootClass = "Residential"; };
+		case "Land_House_C_5_V3_EP1": { _LootClass = "Residential"; };
+		case "Land_House_C_5_V1_EP1": { _LootClass = "Residential"; };
+		case "Land_House_C_9_EP1": { _LootClass = "Residential"; };
+		case "Land_House_C_10_EP1": { _LootClass = "Residential"; };
+		case "Land_House_C_11_EP1": { _LootClass = "Residential"; };
+		case "Land_House_C_12_EP1": { _LootClass = "Industrial"; };
+		case "Land_House_K_3_EP1": { _LootClass = "Residential"; };
+		case "Land_House_K_7_EP1": { _LootClass = "Residential"; };
+		case "Land_House_L_7_EP1": { _LootClass = "Residential"; };
+		case "Land_House_L_6_EP1": { _LootClass = "Residential"; };
+		case "Land_House_K_8_EP1": { _LootClass = "Residential"; };
+		case "Land_House_K_5_EP1": { _LootClass = "Residential"; };
+		case "Land_House_K_1_EP1": { _LootClass = "Residential"; };
+		case "Land_House_L_3_EP1": { _LootClass = "Residential"; };
+		case "Land_House_L_4_EP1": { _LootClass = "Residential"; };
+		case "LAND_ibr_bank": { _LootClass = "Office"; };
+		case "Land_House_L_8_EP1": { _LootClass = "Residential"; };
+		case "Land_ibrhotel": { _LootClass = "Residential"; };
+		case "Land_MBG_Shanty_BIG": { _LootClass = "Residential"; };
+		case "Land_dum_istan3_hromada2": { _LootClass = "Residential"; };
+		case "Land_budova4_in": { _LootClass = "Military"; };
+		case "Land_army_hut_int": { _LootClass = "Military"; };
+		case "Land_army_hut3_long_int": { _LootClass = "Military"; };
+		case "Land_army_hut2_int": { _LootClass = "Military"; };
+		case "land_ibr_hangar": { _LootClass = "Military"; };
+		case "Land_MBG_Police_Station": { _LootClass = "Military"; };
+		case "Land_dum_mesto_in": { _LootClass = "Residential"; };
+		case "Land_hut01": { _LootClass = "Industrial"; };
+		case "Land_hut02": { _LootClass = "Residential"; };
+		case "Land_hut04": { _LootClass = "Residential"; };
+		case "Land_Ind_Oil_Tower_EP1": { _LootClass = "Industrial"; };
+		case "Land_ibr_terminal": { _LootClass = "Office"; };
+		case "Land_A_Villa_EP1": { _LootClass = "Office"; };
+		case "Land_A_Office01_EP1": { _LootClass = "Office"; };
+		case "USMC_WarfareBFieldhHospital": { _LootClass = "Hospital"; };
+		case "USMC_WarfareBFieldhHospital_EP1": { _LootClass = "Hospital"; };
+		case "MASH": { _LootClass = "Hospital"; };
+        case "MASH_EP1": { _LootClass = "Hospital"; };
+        default { _LootClass = "Residential"; };
+};
+ 
+switch (_LootClass) do { //Find correct loot
+        case "Residential": {
+                _itemTypes = [
+                        ["ItemSodaMdew","magazine"],
+                        ["ItemWatch","generic"],
+                        ["ItemCompass","generic"],
+                        ["ItemMap","weapon"],
+                        ["Makarov","weapon"],
+                        ["Colt1911","weapon"],
+                        ["ItemFlashlight","generic"],
+                        ["ItemKnife","generic"],
+                        ["ItemMatchbox","generic"],
+                        ["","generic"],
+                        ["LeeEnfield","weapon"],
+                        ["revolver_EP1","weapon"],
+                       
+                        ["DZ_Assault_Pack_EP1","object"], // 12
+                        ["DZ_Czech_Vest_Puch","object"], // 12-0
+                        ["DZ_ALICE_Pack_EP1","object"], // 16
+                        ["DZ_TK_Assault_Pack_EP1","object"], // 16
+                        //["DZ_British_ACU","object"], // 18
+                       
+                        ["Winchester1866","weapon"],
+                        ["WeaponHolder_ItemTent","object"],
+                        ["","military"],
+                        ["","trash"],
+                        ["Binocular","weapon"],
+                        ["PartWoodPile","magazine"],
+                        ["WeaponHolder_ItemCrowbar","object"],
+                        ["MR43","weapon"],
+						["ItemAntibiotic","magazine"]
+                 ];
+                _itemChance = [
+                        0.01,
+                        0.15,
+                        0.05,
+                        0.03,
+                        0.13,
+                        0.05,
+                        0.03,
+                        0.08,
+                        0.06,
+                        2,
+                        0.06,
+                        0.04,
+                        0.05, //12
+                        0.04, // 12-0
+                        0.02, //16
+                        0.02, //16
+                        //0.01, //18
+                        0.01,
+                        0.01,
+                        0.03,
+                        0.5,
+                        0.06,
+                        0.06,
+                        0.08,
+                        0.03,
+						0.03
+                ];
+        };
+        case "Industrial": {
+                _itemTypes = [
+                        ["","generic"],
+                        ["","trash"],
+                        ["","military"],
+                        ["WeaponHolder_PartGeneric","object"],
+                        ["WeaponHolder_PartWheel","object"],
+                        ["WeaponHolder_PartFueltank","object"],
+                        ["WeaponHolder_PartEngine","object"],
+                        ["WeaponHolder_PartGlass","object"],
+                        ["WeaponHolder_PartVRotor","object"],
+                        ["WeaponHolder_ItemJerrycan","object"],
+                        ["WeaponHolder_ItemHatchet","object"],
+                        ["ItemKnife","military"],
+                        ["ItemToolbox","weapon"],
+                        //["ItemWire","magazine"],
+                        ["ItemTankTrap","magazine"]
+						//["ItemSandbag","magazine"]
+                ];
+                _itemChance = [
+                        0.18,
+                        0.29,
+                        0.04,
+                        0.04,
+                        0.05,
+                        0.02,
+                        0.02,
+                        0.04,
+                        0.01,
+                        0.04,
+                        0.11,
+                        0.07,
+                        0.06,
+                        //0.01,
+                        0.04
+						//0.005
+                ];
+        };
+        case "Farm": {
+                _itemTypes = [
+                        ["WeaponHolder_ItemJerrycan","object"],
+                        ["","generic"],
+                        ["huntingrifle","weapon"],
+                        ["LeeEnfield","weapon"],
+                        ["Winchester1866","weapon"],
+                        ["","trash"],
+                        ["Crossbow_DZ","weapon"],
+                        ["PartWoodPile","magazine"],
+                        ["WeaponHolder_ItemHatchet","object"],
+                        ["MR43","weapon"]
+                        //["WeaponHolder_ItemMachete","object"],
+						//["ItemToolbox","weapon"]
+                ];
+                _itemChance = [
+                        0.06,
+                        0.28,
+                        0.01,
+                        0.04,
+                        0.03,
+                        0.22,
+                        0.03,
+                        0.11,
+                        0.17,
+                        0.06
+                       // 0.03,
+						//0.005
+                ];
+        };
+        case "Supermarket": {
+                _itemTypes = [
+                        ["ItemWatch","generic"],
+                        ["ItemCompass","generic"],
+                        ["ItemMap","weapon"],
+                        ["Makarov","weapon"],
+                        ["Colt1911","weapon"],
+                        ["ItemFlashlight","generic"],
+                        ["ItemKnife","generic"],
+                        ["ItemMatchbox","generic"],
+                        ["","generic"],
+                        ["LeeEnfield","weapon"],
+                        ["revolver_EP1","weapon"],
+                                       
+                        ["DZ_Assault_Pack_EP1","object"], // 12
+                        ["DZ_Czech_Vest_Puch","object"], // 12-0
+                        ["DZ_ALICE_Pack_EP1","object"], // 16
+                        ["DZ_TK_Assault_Pack_EP1","object"], // 16
+                        ["DZ_British_ACU","object"], // 18
+                       
+                        ["Winchester1866","weapon"],
+                        ["WeaponHolder_ItemTent","object"],
+                        ["","food"],
+                        ["","trash"],
+                        ["Crossbow_DZ","weapon"],
+                        ["Binocular","weapon"],
+                        ["PartWoodPile","magazine"],
+                        ["MR43","weapon"],
+						//["ItemAntibiotic","magazine"],
+						["ItemToolbox","weapon"]
+                ];
+                _itemChance = [
+                        0.15,
+                        0.01,
+                        0.05,
+                        0.02,
+                        0.02,
+                        0.05,
+                        0.02,
+                        0.05,
+                        0.05,
+                        0.01,
+                        0.01,
+                        0.05, //12
+                        0.04, // 12-0
+                        0.02, //16
+                        0.02, //16
+                        0.01, //18
+                        0.01,
+                        0.01,
+                        0.3,
+                        0.15,
+                        0.01,
+                        0.05,
+                        0.02,
+                        0.01,
+						//0.04,
+						0.005
+                ];
+        };
+        case "Hospital": {
+                _itemTypes =    [
+                        ["","hospital"],
+                        ["MedBox0","object"],
+						["ItemAntibiotic","magazine"]
+                ];
+                _itemChance = [
+                        1,
+                        2,
+						1
+                ];
+        };
+        
+case "Military": {
+           _itemTypes = [
+           
+// HANDGUNS --------------------------------------------------------------------
+
+            // NORMAL       0.44
+            // FULL AUTO    0.42
+            // SD           0.40
+            // AMMO (SAME AS TYPE)
+
+     // NORMAL -----------------------------------------------------------------
+     
+        ["Colt1911", "weapon"],                              //M1911            1
+        ["glock17_EP1", "weapon"],                           //G17              2
+        ["M9", "weapon"],                                    //M9               3
+        ["Makarov", "weapon"],                               //Makarov PM       4
+        ["revolver_EP1", "weapon"],                          //Revolver         5
+        ["revolver_gold_EP1", "weapon"],                     //Revolver gold    6
+     
+     // FULL AUTO --------------------------------------------------------------
+        
+        ["Sa61_EP1", "weapon"],                              //Sa-61            7
+        ["UZI_EP1", "weapon"],                               //PDW              8
+        
+     // SD ---------------------------------------------------------------------
+     
+        ["MakarovSD", "weapon"],                             //Makarov SD       9
+        ["M9SD", "weapon"],                                  //M9 SD            10
+        ["UZI_SD_EP1", "weapon"],                            //PDW SD           11
+     
+     // AMMO -------------------------------------------------------------------
+     
+        ["8Rnd_9x18_MakarovSD", "magazine"],                                 // 12 !9
+        ["20Rnd_B_765x17_Ball", "magazine"],                                 // 13 !7
+
+// IRONSIGHTS ------------------------------------------------------------------
+
+                // STANAG/AK        0.38
+                // SLUGS/PELLETS    0.36
+                // GLS              0.34
+                // FAL/AKM          0.30
+                // SD               0.28
+                // AMMO (SAME AS TYPE)
+
+     // STANAG/AK --------------------------------------------------------------
+        
+        ["M16A2", "weapon"],                                 //M16A2            14
+        ["m16a4", "weapon"],                                 //M16A4            15
+        ["M4A1", "weapon"],                                  //M4A1             16
+        ["G36a", "weapon"],                                  //G36              17
+        ["G36A_camo", "weapon"],                             //G36A (camo)      18
+        ["MP5A5", "weapon"],                                 //MP5A5            19
+        ["AK_74", "weapon"],                                 //AK-74            21
+        ["AK_47_S", "weapon"],                               //AKS              22
+        ["AKS_74", "weapon"],                                //AKS-74           23
+        ["AKS_74_U", "weapon"],                              //AKS-74U          24
+        ["SCAR_L_CQC", "weapon"],                            //Mk16 CQC         25
+        
+     // SLUGS/PELLETS ----------------------------------------------------------
+     
+        ["M1014", "weapon"],                                 //M1014            26
+        ["Saiga12K", "weapon"],                              //Saiga 12K        27
+        ["Remington870_lamp","weapon"],                      //Remington        27Bis
+     
+     // GLS --------------------------------------------------------------------
+     
+        ["AK_74_GL", "weapon"],                              //AK-74 GP-25      28
+        ["M16A2GL", "weapon"],                               //M16A2 M203       29
+        ["M16A4_GL", "weapon"],                              //M16A4 M203       30
+        
+     // FAL/AKM ----------------------------------------------------------------
+     
+        ["FN_FAL", "weapon"],                                //FN FAL           31
+        ["AK_47_M", "weapon"],                               //AKM              32
+        ["AKS_GOLD", "weapon"],                              //AKS              33
+     
+     // SD ---------------------------------------------------------------------
+     
+        ["bizon_silenced", "weapon"],                        //Bizon PP-19 SD   34
+        
+     // AMMO -------------------------------------------------------------------
+        
+        ["64Rnd_9x19_SD_Bizon", "magazine"],                                 // 35 !34
+        ["1Rnd_HE_GP25", "magazine"],                                        // 36 !28
+        ["1Rnd_SMOKE_GP25", "magazine"],                                     // 37 !28
+        ["100Rnd_556x45_BetaCMag", "magazine"],                              // 38 !17 !18
+        ["8Rnd_B_Saiga12_74Slug", "magazine"],                               // 39 !27
+        ["8Rnd_B_Saiga12_Pellets", "magazine"],                              // 40 !27
+        ["20Rnd_762x51_FNFAL", "magazine"],                                  // 41 !31     
+           
+// SPECIALIZED OPTICS ----------------------------------------------------------
+                
+                // CCO/KOBRA        0.26
+                // GLS/HOLO/RCO     0.22
+             
+     // CCO --------------------------------------------------------------------
+        
+        ["M4A1_Aim", "weapon"],                              //M4A1 CCO         42
+        ["M4A1_Aim_camo", "weapon"],                         //M4A1 CCO         43
+        ["M4A3_CCO_EP1", "weapon"],                          //M4A3 CCO         44
+        ["G36C", "weapon"],                                  //G36 C            45
+        ["G36C_camo", "weapon"],                             //G36C (camo)      46
+        ["G36K", "weapon"],                                  //G36 K            47
+        ["G36K_camo", "weapon"],                             //G36K (camo)      48
+        ["AKS_74_kobra", "weapon"],                          //AKS-74 Kobra     49
+        
+    // GLS/HOLO/RCO ------------------------------------------------------------
+        
+        ["AK_107_GL_kobra", "weapon"],                     //AK-107 GL          50
+        ["AK_74_GL_kobra", "weapon"],                      //AK-74 GP-25 Kobra  51
+        ["M4A1_RCO_GL", "weapon"],                         //M4A1 M203 RCO      52
+        ["M4A3_RCO_GL_EP1", "weapon"],                     //M4A3 ACOG GL       53
+        ["BAF_L85A2_UGL_Holo", "weapon"],                  //L85A2 Holo GL      54
+        ["BAF_L85A2_RIS_Holo", "weapon"],                  //L85A2 Holo         55
+        ["m8_carbineGL", "weapon"],                        //M8 + M320          56
+
+// SNIPERS ---------------------------------------------------------------------
+        
+                // LOW CALIBER          0.1
+     
+    // LOW CALIBER -------------------------------------------------------------
+        
+        ["BAF_L86A2_ACOG", "weapon"],                        //L86A2 LSW        89                     
+        ["M4SPR", "weapon"],                                 //Mk12 SPR         90
+        ["m8_sharpshooter", "weapon"],                       //M8 Sharpshooter  91
+
+// LMGS ------------------------------------------------------------------------
+        // LOW CALIBER      0.04
+        
+    // LOW CALIBER -------------------------------------------------------------
+        
+        ["m8_SAW", "weapon"],                              //M8 Automatic Rifle 111
+        ["RPK_74", "weapon"],                              //RPK                112  
+        ["MG36", "weapon"],                                //MG36               113
+        ["MG36_camo", "weapon"],                           //MG36 (camo)        114
+        ["M249", "weapon"],                                //M249 SAW           115
+        ["M249_EP1", "weapon"],                            //M249 SAW           116
+
+// MISC ------------------------------------------------------------------------
+
+        // LOW VALUE TOOLS
+        // AMMO BOXES
+        // SKINS
+        // NON-DEFINED
+        
+   // LOW VALUE TOOLS ----------------------------------------------------------
+   
+        ["Binocular","weapon"],                                              // 147
+        ["ItemFlashlightRed","military"],                                    // 148
+
+   // AMMO BOXES ---------------------------------------------------------------
+   
+        ["AmmoBoxSmall_556","object"],                                       // 155
+
+   // SKINS --------------------------------------------------------------------
+   
+        ["skin_Camo1_DZ", "magazine"],                                       // 158
+        ["skin_Soldier1_DZ", "magazine"],                                    // 159
+
+   // NON-DEFINED --------------------------------------------------------------
+   
+        //["","medical"],                                                    // 160
+        ["","military"]                                                      // 161
+];
+
+        _itemChance = [
+
+        0.44,                                                                // 1
+        0.44,                                                                // 2
+        0.44,                                                                // 3
+        0.44,                                                                // 4
+        0.44,                                                                // 5
+        0.44,                                                                // 6
+        
+        //----------------------------------------------------------------------
+        
+        0.42,                                                                // 7
+        0.42,                                                                // 8
+        
+        //----------------------------------------------------------------------
+        
+        0.40,                                                                // 9
+        0.40,                                                                // 10
+        0.40,                                                                // 11
+        
+        //----------------------------------------------------------------------
+        
+        0.40,                                                                // 12
+        0.42,                                                                // 13
+        
+        //----------------------------------------------------------------------
+        
+        0.38,                                                                // 14
+        0.38,                                                                // 15
+        0.38,                                                                // 16
+        0.38,                                                                // 17
+        0.38,                                                                // 18
+        0.38,                                                                // 19
+        0.38,                                                                // 20
+        0.38,                                                                // 21
+        0.38,                                                                // 22
+        0.38,                                                                // 23
+        0.38,                                                                // 24
+        0.38,                                                                // 25
+        
+        //----------------------------------------------------------------------
+        
+        0.36,                                                                // 26
+        0.36,                                                                // 27
+        0.36,                                                                // 27Bis
+        
+        //----------------------------------------------------------------------
+        
+        0.34,                                                                // 28
+        0.34,                                                                // 29
+        0.34,                                                                // 30
+        
+        //----------------------------------------------------------------------
+        
+        0.30,                                                                // 31
+        0.30,                                                                // 32
+        0.30,                                                                // 33
+        
+        //----------------------------------------------------------------------
+        
+        0.28,                                                                // 34
+        
+        //----------------------------------------------------------------------
+        
+        0.28,                                                                // 35
+        0.34,                                                                // 36
+        0.34,                                                                // 37
+        0.38,                                                                // 38
+        0.36,                                                                // 39
+        0.36,                                                                // 40
+        0.30,                                                                // 41
+        
+        //---------------------------------------------------------------------- 
+       
+        0.26,                                                                // 42
+        0.26,                                                                // 43
+        0.26,                                                                // 44
+        0.26,                                                                // 45
+        0.26,                                                                // 46
+        0.26,                                                                // 47
+        0.26,                                                                // 48
+        0.26,                                                                // 49
+        
+        //----------------------------------------------------------------------
+        
+        0.22,                                                                // 50
+        0.22,                                                                // 51
+        0.22,                                                                // 52
+        0.22,                                                                // 53
+        0.22,                                                                // 54
+        0.22,                                                                // 55
+        0.22,                                                                // 56
+        
+        //----------------------------------------------------------------------
+        
+        0.01,                                                                // 89
+        0.01,                                                                // 90
+        0.01,                                                                // 91
+        
+        //----------------------------------------------------------------------
+        
+        0.04,                                                                // 111
+        0.04,                                                                // 112
+        0.04,                                                                // 113
+        0.04,                                                                // 114
+        0.04,                                                                // 115
+        0.04,                                                                // 116
+
+        //----------------------------------------------------------------------
+        
+        0.18,                                                                // 147
+        0.28,                                                                // 148
+
+        //----------------------------------------------------------------------
+        
+        0.20,                                                                // 155
+        
+        //----------------------------------------------------------------------
+        
+        0.02,                                                                // 158
+        0.12,                                                                // 159
+
+        //----------------------------------------------------------------------
+        
+        //0.04,                                                              // 160
+        0.20                                                                 // 161
+        ];
+};
+
+case "MilitarySpecial": {
+           _itemTypes = [
+
+// HANDGUNS --------------------------------------------------------------------
+
+            // NORMAL       0.44
+            // FULL AUTO    0.42
+            // SD           0.40
+            // AMMO (SAME AS TYPE)
+
+     // NORMAL -----------------------------------------------------------------
+     
+        ["Colt1911", "weapon"],                              //M1911            1
+        ["glock17_EP1", "weapon"],                           //G17              2
+        ["M9", "weapon"],                                    //M9               3
+        ["Makarov", "weapon"],                               //Makarov PM       4
+        ["revolver_EP1", "weapon"],                          //Revolver         5
+        ["revolver_gold_EP1", "weapon"],                     //Revolver gold    6
+     
+     // FULL AUTO --------------------------------------------------------------
+        
+        ["Sa61_EP1", "weapon"],                              //Sa-61            7
+        ["UZI_EP1", "weapon"],                               //PDW              8
+        
+     // SD ---------------------------------------------------------------------
+     
+        ["MakarovSD", "weapon"],                             //Makarov SD       9
+        ["M9SD", "weapon"],                                  //M9 SD            10
+        ["UZI_SD_EP1", "weapon"],                            //PDW SD           11
+     
+     // AMMO -------------------------------------------------------------------
+     
+        ["8Rnd_9x18_MakarovSD", "magazine"],                                 // 12 !9
+        ["20Rnd_B_765x17_Ball", "magazine"],                                 // 13 !7
+
+// IRONSIGHTS ------------------------------------------------------------------
+
+                // STANAG/AK        0.38
+                // SLUGS/PELLETS    0.36
+                // GLS              0.34
+                // FAL/AKM          0.30
+                // SD               0.28
+                // AMMO (SAME AS TYPE)
+
+     // STANAG/AK --------------------------------------------------------------
+        
+        ["M16A2", "weapon"],                                 //M16A2            14
+        ["m16a4", "weapon"],                                 //M16A4            15
+        ["M4A1", "weapon"],                                  //M4A1             16
+        ["G36a", "weapon"],                                  //G36              17
+        ["G36A_camo", "weapon"],                             //G36A (camo)      18
+        ["MP5A5", "weapon"],                                 //MP5A5            19
+        ["AK_74", "weapon"],                                 //AK-74            21
+        ["AK_47_S", "weapon"],                               //AKS              22
+        ["AKS_74", "weapon"],                                //AKS-74           23
+        ["AKS_74_U", "weapon"],                              //AKS-74U          24
+        ["SCAR_L_CQC", "weapon"],                            //Mk16 CQC         25
+        
+     // SLUGS/PELLETS ----------------------------------------------------------
+     
+        ["M1014", "weapon"],                                 //M1014            26
+        ["Saiga12K", "weapon"],                              //Saiga 12K        27
+        ["Remington870_lamp","weapon"],                      //Remington        27Bis
+     
+     // GLS --------------------------------------------------------------------
+     
+        ["AK_74_GL", "weapon"],                              //AK-74 GP-25      28
+        ["M16A2GL", "weapon"],                               //M16A2 M203       29
+        ["M16A4_GL", "weapon"],                              //M16A4 M203       30
+        
+     // FAL/AKM ----------------------------------------------------------------
+     
+        ["FN_FAL", "weapon"],                                //FN FAL           31
+        ["AK_47_M", "weapon"],                               //AKM              32
+        ["AKS_GOLD", "weapon"],                              //AKS              33
+     
+     // SD ---------------------------------------------------------------------
+     
+        ["bizon_silenced", "weapon"],                        //Bizon PP-19 SD   34
+        
+     // AMMO -------------------------------------------------------------------
+        
+        ["64Rnd_9x19_SD_Bizon", "magazine"],                                 // 35 !34
+        ["1Rnd_HE_GP25", "magazine"],                                        // 36 !28
+        ["1Rnd_SMOKE_GP25", "magazine"],                                     // 37 !28
+        ["100Rnd_556x45_BetaCMag", "magazine"],                              // 38 !17 !18
+        ["8Rnd_B_Saiga12_74Slug", "magazine"],                               // 39 !27
+        ["8Rnd_B_Saiga12_Pellets", "magazine"],                              // 40 !27
+        ["20Rnd_762x51_FNFAL", "magazine"],                                  // 41 !31
+
+// SPECIALIZED OPTICS ----------------------------------------------------------
+                
+                // CCO/KOBRA        0.26
+                // GLS/HOLO/RCO     0.22
+                // ACOG/PSO/HWS     0.18
+                // SD/DMR           0.14
+                // MK16&17/NV       0.12
+                // AMMO (SAME AS TYPE)
+             
+     // CCO --------------------------------------------------------------------
+        
+        ["M4A1_Aim", "weapon"],                              //M4A1 CCO         42
+        ["M4A1_Aim_camo", "weapon"],                         //M4A1 CCO         43
+        ["M4A3_CCO_EP1", "weapon"],                          //M4A3 CCO         44
+        ["G36C", "weapon"],                                  //G36 C            45
+        ["G36C_camo", "weapon"],                             //G36C (camo)      46
+        ["G36K", "weapon"],                                  //G36 K            47
+        ["G36K_camo", "weapon"],                             //G36K (camo)      48
+        ["AKS_74_kobra", "weapon"],                          //AKS-74 Kobra     49
+        
+    // GLS/HOLO/RCO ------------------------------------------------------------
+        
+        ["AK_107_GL_kobra", "weapon"],                     //AK-107 GL          50
+        ["AK_74_GL_kobra", "weapon"],                      //AK-74 GP-25 Kobra  51
+        ["M4A1_RCO_GL", "weapon"],                         //M4A1 M203 RCO      52
+        ["M4A3_RCO_GL_EP1", "weapon"],                     //M4A3 ACOG GL       53
+        ["BAF_L85A2_UGL_Holo", "weapon"],                  //L85A2 Holo GL      54
+        ["BAF_L85A2_RIS_Holo", "weapon"],                  //L85A2 Holo         55
+        ["m8_carbineGL", "weapon"],                        //M8 + M320          56
+        
+    // ACOG/PSO/HWS ------------------------------------------------------------
+    
+        ["AK_107_GL_pso", "weapon"],                         //AK107 GL PSO     57
+        ["AK_107_pso", "weapon"],                            //AK-107 PSO       58
+        ["AKS_74_pso", "weapon"],                            //AKS-74 PSO       59
+        ["m16a4_acg", "weapon"],                             //M16A4 ACOG       60
+        ["M16A4_ACG_GL", "weapon"],                          //M16A4 M203 ACOG  61
+        ["M4A1_HWS_GL", "weapon"],                           //M4A1 Holo        62
+        ["M4A1_HWS_GL_camo", "weapon"],                      //M4A1 Holo        63
+        ["BAF_L85A2_UGL_ACOG", "weapon"],                    //L85A2 ACOG GL    64
+        ["BAF_L85A2_RIS_ACOG", "weapon"],                    //L85A2 ACOG       65
+        ["BAF_L85A2_RIS_SUSAT", "weapon"],                   //L85A2 SUSAT      66
+        ["BAF_L85A2_UGL_SUSAT", "weapon"],                   //L85A2 SUSAT GL   67
+    
+    // SD/DMR ------------------------------------------------------------------
+    
+        ["AKS_74_UN_kobra", "weapon"],                       //AKS-74UN Kobra   68
+        ["G36_C_SD_camo", "weapon"],                         //G36C SD (camo)   69
+        ["G36_C_SD_eotech", "weapon"],                       //G36C-SD          70
+        ["M4A1_AIM_SD_camo", "weapon"],                      //M4A1 CCO SD      71
+        ["M4A1_HWS_GL_SD_Camo", "weapon"],                   //M4A1 Holo SD     72
+        ["MP5SD", "weapon"],                                 //MP5SD6           73
+        ["SCAR_L_CQC_CCO_SD", "weapon"],                     //Mk16 CCO SD      74
+        ["M14_EP1", "weapon"],                               //M14 AIM          75
+        
+    // MK16&17/NV --------------------------------------------------------------
+        
+        //["AKS_74_NSPU", "weapon"],                         //AKS-74 NSPU      76
+        ["FN_FAL_ANPVS4", "weapon"],                         //FN FAL AN/PVS-4  77
+        ["SCAR_H_CQC_CCO", "weapon"],                        //Mk17 CCO         78
+        ["SCAR_H_STD_EGLM_Spect", "weapon"],                 //Mk17 EGLM RCO    79
+        ["SCAR_L_CQC_EGLM_Holo", "weapon"],                  //Mk16 EGLM Holo   80
+        ["SCAR_L_CQC_Holo", "weapon"],                       //Mk16 CQC Holo    81
+        ["SCAR_L_STD_EGLM_RCO", "weapon"],                   //Mk16 EGLM RCO    82
+        ["SCAR_L_STD_HOLO", "weapon"],                       //Mk16 Holo        83
+        ["SCAR_L_STD_Mk4CQT", "weapon"],                     //Mk16 Mk4CQ/      84
+        //["BAF_L85A2_RIS_CWS", "weapon"],                   //L85A2 AWS        85
+    
+    // AMMO --------------------------------------------------------------------
+    
+        ["20Rnd_762x51_B_SCAR", "magazine"],                                 // 86 !78 !79
+        ["30Rnd_545x39_AKSD", "magazine"],                                   // 87 !68
+        ["30Rnd_556x45_G36SD", "magazine"],                                  // 88 !69 !70
+
+// SNIPERS ---------------------------------------------------------------------
+        
+                // LOW CALIBER          0.1
+                // MEDIUM CALIBER       0.08
+                // HIGH CALIBER         0.05
+                // AMMO (SAME AS TYPE)
+     
+    // LOW CALIBER -------------------------------------------------------------
+        
+        ["BAF_L86A2_ACOG", "weapon"],                        //L86A2 LSW        89                     
+        ["M4SPR", "weapon"],                                 //Mk12 SPR         90
+        ["m8_sharpshooter", "weapon"],                       //M8 Sharpshooter  91
+   
+    // MEDIUM CALIBER ----------------------------------------------------------
+             
+        ["DMR", "weapon"],                                   //DMR              92
+        ["M24", "weapon"],                                   //M24              93
+        ["M24_des_EP1", "weapon"],                           //M24 desert       94
+        ["M40A3", "weapon"],                                 //M40A3            95
+        ["SCAR_H_LNG_Sniper", "weapon"],                     //Mk17 Sniper      96
+        ["SVD", "weapon"],                                   //SVD              97
+        ["SVD_CAMO", "weapon"],                              //SVD Camo         98
+        ["SVD_des_EP1", "weapon"],                           //SVD (camo)       99
+        ["SVD_NSPU_EP1", "weapon"],                          //SVD NSPU         100
+    
+    // LARGE CALIBER -----------------------------------------------------------
+        
+        //["ksvk", "weapon"],                                  //KSVK             101
+        //["m107", "weapon"],                                  //M107             102
+        //["BAF_AS50_scoped", "weapon"],                       //AS50             103
+        //["BAF_LRR_scoped", "weapon"],                        //L115A3 LRR       104
+        //["BAF_LRR_scoped_W", "weapon"],                      //L115A2 LRR       105
+        //["VSS_vintorez", "weapon"],                          //VSS Vintorez     106
+    
+    // AMMO --------------------------------------------------------------------
+        
+        ["10Rnd_762x54_SVD", "magazine"],                                    // 107 !97 !98 !99 !100
+        ["5Rnd_127x108_KSVK", "magazine"],                                   // 108 !101
+        ["5Rnd_86x70_L115A1", "magazine"],                                   // 109 !104 !105
+        ["20Rnd_9x39_SP5_VSS", "magazine"],                                  // 110 !106
+
+// LMGS ------------------------------------------------------------------------
+        // LOW CALIBER      0.04
+        // NON SCOPED       0.02
+        // SCOPED           0.01
+        
+    // LOW CALIBER -------------------------------------------------------------
+        
+        ["m8_SAW", "weapon"],                              //M8 Automatic Rifle 111
+        ["RPK_74", "weapon"],                              //RPK                112  
+        ["MG36", "weapon"],                                //MG36               113
+        ["MG36_camo", "weapon"],                           //MG36 (camo)        114
+        ["M249", "weapon"],                                //M249 SAW           115
+        ["M249_EP1", "weapon"],                            //M249 SAW           116
+        
+    // NON SCOPED --------------------------------------------------------------    
+        
+        ["M240", "weapon"],                                //M240               117
+        ["PK", "weapon"],                                  //PKM                118
+        ["Mk_48", "weapon"],                               //Mk 48 Mod 0        119
+        ["Mk_48_DES_EP1", "weapon"],                       //Mk48 Mod 0 (camo)  120
+        ["M60A4_EP1", "weapon"],                           //M60E4              121
+        ["BAF_L7A2_GPMG", "weapon"],                       //L7A2 GPMG          122
+        
+    // SCOPED ------------------------------------------------------------------
+        
+        ["BAF_L110A1_Aim", "weapon"],                      //L110A1             123
+        ["m240_scoped_EP1", "weapon"],                     //M240 scope         124
+        ["Pecheneg", "weapon"],                            //PKP                125
+        ["M249_m145_EP1", "weapon"],                       //M249 scope         126
+    
+    // AMMO --------------------------------------------------------------------
+    
+        ["200Rnd_556x45_L110A1", "magazine"],                                // 127 !123
+        ["75Rnd_545x39_RPK", "magazine"],                                    // 128 !112
+        ["100Rnd_762x54_PK", "magazine"],                                    // 129 !118
+
+// ORDINANCE -------------------------------------------------------------------
+
+            // LAUNCHERS      0.005
+            // MINES          0.005
+            // SATCHELS       0.001
+            // AMMO (SAME AS TYPE)
+            
+    // LAUNCHERS ---------------------------------------------------------------
+        
+        ["BAF_NLAW_Launcher", "weapon"],                     //NLAW             130
+        ["M136", "weapon"],                                  //M136             131
+        ["M47Launcher_EP1", "weapon"],                       //M47 Dragon       132
+        ["MetisLauncher", "weapon"],                         //Metis AT-13      133
+        ["SMAW", "weapon"],                                  //SMAW             134
+        ["M32_EP1", "weapon"],                               //M32              135
+        ["M79_EP1", "weapon"],                               //M79              136
+        ["Mk13_EP1", "weapon"],                              //Mk13             137
+   
+   // MINES --------------------------------------------------------------------
+   
+        ["MineE", "magazine"],                               //AT Mine          138
+    
+   // SATCHELS -----------------------------------------------------------------
+        
+        ["PipeBomb", "magazine"],                            //Satchel Charge   139
+        
+   // AMMO ---------------------------------------------------------------------
+   
+        ["NLAW", "magazine"],                                                // 140 !130        
+        ["M136", "magazine"],                                                // 141 !131
+        ["Dragon_EP1", "magazine"],                                          // 142 !132
+        ["AT13", "magazine"],                                                // 143 !134
+        ["SMAW_HEAA", "magazine"],                                           // 144 !135
+        ["SMAW_HEDP", "magazine"],                                           // 145 !135
+        ["6Rnd_HE_M203", "magazine"],                                        // 146 !136
+      //------------------------------------------------------------------------
+      
+// MISC ------------------------------------------------------------------------
+
+        // LOW VALUE TOOLS
+        // HIGH VALUE TOOLS
+        // BACKPACKS
+        // AMMO BOXES
+        // SKINS
+        // NON-DEFINED
+        
+   // LOW VALUE TOOLS ----------------------------------------------------------
+   
+        ["Binocular","weapon"],                                              // 147
+        ["ItemFlashlightRed","military"],                                    // 148
+   
+   // HIGH VALUE TOOLS ---------------------------------------------------------
+   
+        ["ItemGPS","weapon"],                                                // 149
+        ["ItemEtool","weapon"],                                              // 150
+        ["Binocular_Vector","military"],                                     // 151
+        ["NVGoogles", "weapon"],                                             // 151 bis
+   
+   // BACKPACKS ----------------------------------------------------------------
+   
+        ["DZ_ALICE_Pack_EP1","object"],                                      // 152
+        ["DZ_Backpack_EP1","object"],                                        // 153
+        ["DZ_TK_Assault_Pack_EP1","object"],                                 // 154
+        
+   // AMMO BOXES ---------------------------------------------------------------
+   
+        ["AmmoBoxSmall_556","object"],                                       // 155
+        ["AmmoBoxSmall_762","object"],                                       // 156
+   
+   // SKINS --------------------------------------------------------------------
+   
+        ["skin_Sniper1_DZ", "magazine"],                                     // 157
+        ["skin_Camo1_DZ", "magazine"],                                       // 158
+        ["skin_Soldier1_DZ", "magazine"],                                    // 159
+   
+   // NON-DEFINED --------------------------------------------------------------
+   
+        //["","medical"],                                                    // 160
+        ["","military"]                                                      // 161
+];
+
+        _itemChance = [
+
+        0.44,                                                                // 1
+        0.44,                                                                // 2
+        0.44,                                                                // 3
+        0.44,                                                                // 4
+        0.44,                                                                // 5
+        0.44,                                                                // 6
+        
+        //----------------------------------------------------------------------
+        
+        0.42,                                                                // 7
+        0.42,                                                                // 8
+        
+        //----------------------------------------------------------------------
+        
+        0.40,                                                                // 9
+        0.40,                                                                // 10
+        0.40,                                                                // 11
+        
+        //----------------------------------------------------------------------
+        
+        0.40,                                                                // 12
+        0.42,                                                                // 13
+        
+        //----------------------------------------------------------------------
+        
+        0.38,                                                                // 14
+        0.38,                                                                // 15
+        0.38,                                                                // 16
+        0.38,                                                                // 17
+        0.38,                                                                // 18
+        0.38,                                                                // 19
+        0.38,                                                                // 20
+        0.38,                                                                // 21
+        0.38,                                                                // 22
+        0.38,                                                                // 23
+        0.38,                                                                // 24
+        0.38,                                                                // 25
+        
+        //----------------------------------------------------------------------
+        
+        0.36,                                                                // 26
+        0.36,                                                                // 27
+        0.36,                                                                // 27Bis
+        
+        //----------------------------------------------------------------------
+        
+        0.34,                                                                // 28
+        0.34,                                                                // 29
+        0.34,                                                                // 30
+        
+        //----------------------------------------------------------------------
+        
+        0.30,                                                                // 31
+        0.30,                                                                // 32
+        0.30,                                                                // 33
+        
+        //----------------------------------------------------------------------
+        
+        0.28,                                                                // 34
+        
+        //----------------------------------------------------------------------
+        
+        0.28,                                                                // 35
+        0.34,                                                                // 36
+        0.34,                                                                // 37
+        0.38,                                                                // 38
+        0.36,                                                                // 39
+        0.36,                                                                // 40
+        0.30,                                                                // 41
+        
+        //---------------------------------------------------------------------- 
+       
+        0.26,                                                                // 42
+        0.26,                                                                // 43
+        0.26,                                                                // 44
+        0.26,                                                                // 45
+        0.26,                                                                // 46
+        0.26,                                                                // 47
+        0.26,                                                                // 48
+        0.26,                                                                // 49
+        
+        //----------------------------------------------------------------------
+        
+        0.22,                                                                // 50
+        0.22,                                                                // 51
+        0.22,                                                                // 52
+        0.22,                                                                // 53
+        0.22,                                                                // 54
+        0.22,                                                                // 55
+        0.22,                                                                // 56
+        
+        //----------------------------------------------------------------------
+        
+        0.18,                                                                // 57
+        0.18,                                                                // 58
+        0.18,                                                                // 59
+        0.18,                                                                // 60
+        0.18,                                                                // 61
+        0.18,                                                                // 62
+        0.18,                                                                // 63
+        0.18,                                                                // 64
+        0.18,                                                                // 65
+        0.18,                                                                // 66
+        0.18,                                                                // 67
+        
+        //----------------------------------------------------------------------
+        
+        0.14,                                                                // 68
+        0.14,                                                                // 69
+        0.14,                                                                // 70
+        0.14,                                                                // 71
+        0.14,                                                                // 72
+        0.14,                                                                // 73
+        0.14,                                                                // 74
+        0.14,                                                                // 75
+        
+        //----------------------------------------------------------------------
+        
+        //0.12,                                                                // 76
+        0.12,                                                                // 77
+        0.12,                                                                // 78
+        0.12,                                                                // 79
+        0.12,                                                                // 80
+        0.12,                                                                // 81
+        0.12,                                                                // 82
+        0.12,                                                                // 83
+        0.12,                                                                // 84
+        //0.12,                                                                // 85
+        
+        //----------------------------------------------------------------------
+        
+        0.12,                                                                // 86
+        0.14,                                                                // 87
+        0.14,                                                                // 88
+        
+        //----------------------------------------------------------------------
+        
+        0.01,                                                                // 89
+        0.01,                                                                // 90
+        0.01,                                                                // 91
+        
+        //----------------------------------------------------------------------
+        
+        0.08,                                                                // 92
+        0.08,                                                                // 93
+        0.08,                                                                // 94
+        0.08,                                                                // 95
+        0.08,                                                                // 96
+        0.08,                                                                // 97
+        0.08,                                                                // 98
+        0.08,                                                                // 99
+        0.08,                                                                // 100
+        
+        //----------------------------------------------------------------------
+        
+        //0.05,                                                                // 101
+        //0.05,                                                                // 102
+        //0.05,                                                                // 103
+        //0.05,                                                                // 104
+        //0.05,                                                                // 105
+        //0.05,                                                                // 106
+        
+        //----------------------------------------------------------------------
+        
+        0.08,                                                                // 107
+        0.05,                                                                // 108
+        0.05,                                                                // 109
+        0.05,                                                                // 110
+        
+        //----------------------------------------------------------------------
+        
+        0.04,                                                                // 111
+        0.04,                                                                // 112
+        0.04,                                                                // 113
+        0.04,                                                                // 114
+        0.04,                                                                // 115
+        0.04,                                                                // 116
+        
+        //----------------------------------------------------------------------
+        
+        0.02,                                                                // 117
+        0.02,                                                                // 118
+        0.02,                                                                // 119
+        0.02,                                                                // 120
+        0.02,                                                                // 121
+        0.02,                                                                // 122
+        
+        //----------------------------------------------------------------------
+        
+        0.01,                                                                // 123
+        0.01,                                                                // 124
+        0.01,                                                                // 125
+        0.01,                                                                // 126
+        
+        //----------------------------------------------------------------------
+        
+        0.01,                                                                // 127
+        0.04,                                                                // 128
+        0.02,                                                                // 129
+        
+        //----------------------------------------------------------------------
+        
+        0.005,                                                                // 130
+        0.005,                                                                // 131
+        0.005,                                                                // 132
+        0.005,                                                                // 133
+        0.005,                                                                // 134
+        0.005,                                                                // 135
+        0.005,                                                                // 136
+        0.005,                                                                // 137
+        
+        //----------------------------------------------------------------------
+        
+        0.005,                                                                // 138
+        
+        //----------------------------------------------------------------------
+        
+        0.001,                                                                // 139
+        
+        //----------------------------------------------------------------------
+        
+        0.005,                                                                // 140
+        0.005,                                                                // 141
+        0.005,                                                                // 142
+        0.005,                                                                // 143
+        0.005,                                                                // 144
+        0.005,                                                                // 145
+        0.005,                                                                // 146
+        
+        //----------------------------------------------------------------------
+        
+        0.18,                                                                 // 147
+        0.28,                                                                 // 148
+        
+        //----------------------------------------------------------------------
+        
+        0.10,                                                                 // 149
+        0.18,                                                                 // 150
+        0.05,                                                                 // 151
+        0.05,                                                                 // 151 bis
+        
+        //----------------------------------------------------------------------
+        
+        0.22,                                                                 // 152
+        0.08,                                                                 // 153
+        0.28,                                                                 // 154
+        
+        //----------------------------------------------------------------------
+        
+        0.20,                                                                 // 155
+        0.08,                                                                 // 156
+        
+        //----------------------------------------------------------------------
+        
+        0.005,                                                                // 157
+        0.02,                                                                 // 158
+        0.12,                                                                 // 159
+        
+        //----------------------------------------------------------------------
+        
+        //0.0001,                                                             // 160
+        0.20                                                                  // 161
+        ];
+};
+
+case "HeliCrashSite": {
+           _itemTypes = [
+                      
+// LARGE CALIBER -----------------------------------------------------------
+        
+        ["ksvk", "weapon"],                                  //KSVK             101
+        ["m107", "weapon"],                                  //M107             102
+        ["BAF_AS50_scoped", "weapon"],                       //AS50             103
+        ["BAF_LRR_scoped", "weapon"],                        //L115A3 LRR       104
+        ["BAF_LRR_scoped_W", "weapon"],                      //L115A2 LRR       105
+        ["VSS_vintorez", "weapon"],                          //VSS Vintorez     106
+           
+// SCOPED ------------------------------------------------------------------
+        
+        ["BAF_L110A1_Aim", "weapon"],                      //L110A1             123
+        ["m240_scoped_EP1", "weapon"],                     //M240 scope         124
+        ["Pecheneg", "weapon"],                            //PKP                125
+        ["M249_m145_EP1", "weapon"],                       //M249 scope         126
+                
+// LAUNCHERS ------------------------------------------------------------------
+        
+        ["BAF_NLAW_Launcher", "weapon"],                     //NLAW             130
+        ["M136", "weapon"],                                  //M136             131
+        ["M47Launcher_EP1", "weapon"],                       //M47 Dragon       132
+        ["MetisLauncher", "weapon"],                         //Metis AT-13      133
+        ["SMAW", "weapon"],                                  //SMAW             134
+        ["M32_EP1", "weapon"],                               //M32              135
+        ["M79_EP1", "weapon"],                               //M79              136
+        ["Mk13_EP1", "weapon"],                              //Mk13             137
+   
+// MINES --------------------------------------------------------------------
+   
+        ["MineE", "magazine"],                               //AT Mine          138
+    
+// SATCHELS -----------------------------------------------------------------
+        
+        ["PipeBomb", "magazine"],                            //Satchel Charge   139
+           
+// HIGH VALUE TOOLS ---------------------------------------------------------
+   
+        ["ItemGPS","weapon"],                                                // 149
+        //["ItemEtool","weapon"],                                              // 150
+        ["Binocular_Vector","military"],                                     // 151
+        ["NVGoogles", "weapon"],                                             // 151 bis
+           
+// SKINS --------------------------------------------------------------------
+   
+        ["skin_Sniper1_DZ", "magazine"],                                     // 157
+        ["skin_Camo1_DZ", "magazine"],                                       // 158
+        ["skin_Soldier1_DZ", "magazine"],                                     // 159
+        
+// MISC
+
+        ["DZ_Backpack_EP1","object"],                                        // 153
+        ["BAF_L85A2_RIS_CWS", "weapon"]                      //L85A2 AWS        85
+];
+
+        _itemChance = [
+        
+        0.05,                                                                // 101
+        0.05,                                                                // 102
+        0.05,                                                                // 103
+        0.05,                                                                // 104
+        0.05,                                                                // 105
+        0.05,                                                                // 106
+        
+        //----------------------------------------------------------------------
+        
+        0.01,                                                                // 123
+        0.01,                                                                // 124
+        0.01,                                                                // 125
+        0.01,                                                                // 126
+        
+        //----------------------------------------------------------------------
+        
+        0.005,                                                                // 130
+        0.005,                                                                // 131
+        0.005,                                                                // 132
+        0.005,                                                                // 133
+        0.005,                                                                // 134
+        0.005,                                                                // 135
+        0.005,                                                                // 136
+        0.005,                                                                // 137
+        
+        //----------------------------------------------------------------------
+        
+        0.005,                                                                // 138
+        
+        //----------------------------------------------------------------------
+        
+        0.001,                                                                // 139
+                
+        //----------------------------------------------------------------------
+        
+        0.01,                                                                 // 149
+        //0.18,                                                               // 150
+        0.05,                                                                 // 151
+        0.05,                                                                 // 151 bis
+               
+        //----------------------------------------------------------------------
+        
+        0.005,                                                                // 157
+        0.02,                                                                 // 158
+        0.02,                                                                 // 159
+        
+        //----------------------------------------------------------------------
+        
+        0.05,                                                                 // 153
+        0.01                                                                  // 85 
+        ];
+};
+
+        case "Hunting": {
+                _itemTypes = [
+                        ["ItemMap","weapon"],
+                        ["ItemFlashlight","generic"],
+                        ["ItemKnife","generic"],
+                        ["ItemMatchbox","generic"],
+                        ["Crossbow_DZ","weapon"],
+                        ["","military"],
+                        ["WeaponHolder_ItemMachete", "object"],
+                        ["huntingrifle","weapon"],
+                        ["","hunter"]
+                ];
+                _itemChance = [
+                        0.08,
+                        0.05,
+                        0.04,
+                        0.06,
+                        0.03,
+                        2.00,
+                        0.03,
+                        0.04,
+                        3.00
+                ];
+        };
+};
+//------------------//
+//CUSTOM LOOT SPAWNS//
+//------------------//
+{
+        if ((random 1) < _lootChance) then {
+                _iPos = _obj modelToWorld _x;
+                _nearBy = nearestObjects [_iPos, ["WeaponHolder","WeaponHolderBase"], 1];
+                if (count _nearBy == 0) then {
+                        private["_index"];
+                        _weights = [_itemTypes,_itemChance] call fnc_buildWeightedArray;
+                        _index = _weights call BIS_fnc_selectRandom;
+                        _itemType = _itemTypes select _index;
+                        [_itemType select 0, _itemType select 1 , _iPos, 0.0]  call spawn_loot;
+                };
+        };
+} forEach _positions;
